@@ -7,11 +7,10 @@ class CreateResovisions < ActiveRecord::Migration
       t.string(:headline)
       t.string(:location)
       t.string(:industry)
-      t.int
-
-
-
-
+      t.integer(:num_positions)
+      t.integer(:num_educations)
+      t.text(:pic_url)
+      t.references(:user)
     end
   end
 end
