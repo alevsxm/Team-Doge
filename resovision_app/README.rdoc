@@ -1,28 +1,33 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Lucid Chart ERD:
+https://www.lucidchart.com/documents/edit/df60208e-dcc9-4ed9-a79d-865a4f0d50e4/0
 
-* Ruby version
+Routes notes:
 
-* System dependencies
+Welcome 
+   * Log in/sign up with LinkedIn
 
-* Configuration
+USERS
+‘/users/show/:id’
+   * Basic user information
+   * Link to view editable Resovision (‘/resovisions/edit/:id’)
+   * Button to edit their personal info
+   * Button to delete their account
 
-* Database creation
+RESOVISIONS
+‘/resovisions/index’
+   * List of all resovisions (public)
 
-* Database initialization
+‘/resovisions/edit/:id’
+   * Shows user’s resovision with links 
+   * If resovision is yours, show: 
+      * Links to edit/update sections
+      * Link to delete sections
+      * Link to delete resovision (empty sections)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+‘/resovisions/show/:id’
+   * User’s public resovision 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
