@@ -1,10 +1,14 @@
+== README
+
 
 Lucid Chart ERD:
 https://www.lucidchart.com/documents/edit/df60208e-dcc9-4ed9-a79d-865a4f0d50e4/0
 
 
 
-== README
+
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
