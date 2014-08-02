@@ -1,0 +1,23 @@
+<h1 class="first-name"></h1>
+<h1 class="last-name"></h1>
+<h2 class="location"></h2><br>
+<h2 class="industry"></h2><br>
+<h3 class="headline"></h3><br>
+<img class="pic-url" src= "pic-url">
+
+<% @positions.each do |position| %> 
+    <p class="position">
+        <h4 class="title"></h4>
+        <h5 class="company"></h5>
+        <li class="start-date"></li>
+        <li class="summary"></li>
+    </p>
+<% end %> 
+
+<% @educations.each do |education| %>
+    <p class="education">
+        <h4 class="school-name"></h4><br>
+        <h5 class="degree"></h5><br>
+        <li class="years-attended"></li>
+    </p>
+<% end %> 
