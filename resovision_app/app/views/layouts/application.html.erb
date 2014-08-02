@@ -5,8 +5,16 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+    api_key: 75yxb7noe10oi2
+    authorize: true
+    credentials_cookie: true
+  </script>
 </head>
 <body>
+  <script type="in/Login">
+    Hello, <?js= firstName ?> <?js= lastName ?>.
+  </script>
 
 <%= yield %>
 
