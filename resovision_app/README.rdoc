@@ -6,51 +6,28 @@ https://www.lucidchart.com/documents/edit/df60208e-dcc9-4ed9-a79d-865a4f0d50e4/0
 
 Routes notes:
 
-
-
-
-
-Routes
 Welcome 
-
-
    * Log in/sign up with LinkedIn
 
-
 USERS
-
-
 ‘/users/show/:id’
-
-
    * Basic user information
-   * Link to view it (‘/resovisions/show/:id’)
-   * Link to edit their info
-   * Link to delete their account
-
+   * Link to view editable Resovision (‘/resovisions/edit/:id’)
+   * Button to edit their personal info
+   * Button to delete their account
 
 RESOVISIONS
-
-
 ‘/resovisions/index’
-
-
    * List of all resovisions (public)
 
 ‘/resovisions/edit/:id’
-
-
-   * Show user’s resovision (public) 
+   * Shows user’s resovision with links 
    * If resovision is yours, show: 
-   * 
       * Links to edit/update sections
       * Link to delete sections
       * Link to delete resovision (empty sections)
 
 ‘/resovisions/show/:id’
-
-
-
-   * User’s public link 
+   * User’s public resovision 
 
 
