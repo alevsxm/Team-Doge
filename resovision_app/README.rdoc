@@ -4,35 +4,53 @@
 Lucid Chart ERD:
 https://www.lucidchart.com/documents/edit/df60208e-dcc9-4ed9-a79d-865a4f0d50e4/0
 
+Routes notes:
 
 
 
 
 
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Routes
+Welcome 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+   * Log in/sign up with LinkedIn
+
+
+USERS
+
+
+‘/users/show/:id’
+
+
+   * Basic user information
+   * Link to view it (‘/resovisions/show/:id’)
+   * Link to edit their info
+   * Link to delete their account
+
+
+RESOVISIONS
+
+
+‘/resovisions/index’
+
+
+   * List of all resovisions (public)
+
+‘/resovisions/edit/:id’
+
+
+   * Show user’s resovision (public) 
+   * If resovision is yours, show: 
+   * 
+      * Links to edit/update sections
+      * Link to delete sections
+      * Link to delete resovision (empty sections)
+
+‘/resovisions/show/:id’
+
+
+
+   * User’s public link 
+
+
