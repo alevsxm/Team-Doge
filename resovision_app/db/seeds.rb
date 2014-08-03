@@ -7,14 +7,12 @@ Video.destroy_all
 
 # Users
 liza = User.create(
-  linkedin_pw: "",
-  linkedin_email: "liza.h.ramo@gmail.com"
+  linkedin_id: "b7m0rmBKE7",
 )
 
 # Resovision:
 liza.resovision.push(
   Resovision.create(
-  linkedin_id: "b7m0rmBKE7",
   last_name: "Ramo",
   first_name: "Liza",
   headline: "Content Developer at IBM",
