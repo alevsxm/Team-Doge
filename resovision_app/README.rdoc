@@ -1,7 +1,6 @@
 == README
 
 Heroku URL: 
-
 http://peaceful-lowlands-6813.herokuapp.com/
 
 Lucid Chart ERDs:
