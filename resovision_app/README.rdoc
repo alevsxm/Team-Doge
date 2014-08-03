@@ -4,15 +4,12 @@ Heroku URL:
 http://peaceful-lowlands-6813.herokuapp.com/
 
 Lucid Chart ERDs:
-
 https://www.lucidchart.com/documents/edit/df60208e-dcc9-4ed9-a79d-865a4f0d50e4/0
 
 Trello user stories: 
-
 https://trello.com/b/tZDU4D6J/team-doge-project-2-res-o-vision
 
 Liza's Evernotes on Environment Variables, API Keys & Heroku:
-
 https://www.evernote.com/shard/s273/sh/c3ed1eea-dd39-4cee-a789-da1803ac31cd/c32ae959dea68575593ed8de27daac68
 
 LINKEDIN API DOCS
