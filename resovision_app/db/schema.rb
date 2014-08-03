@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801160615) do
+ActiveRecord::Schema.define(version: 20140803193003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,12 +30,12 @@ ActiveRecord::Schema.define(version: 20140801160615) do
     t.string   "title"
     t.string   "summary"
     t.integer  "start_year"
-    t.integer  "start_month"
-    t.string   "is_current"
     t.string   "company_name"
     t.integer  "resovision_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_current"
+    t.integer  "start_month"
   end
 
   create_table "resovisions", force: true do |t|
@@ -52,10 +52,9 @@ ActiveRecord::Schema.define(version: 20140801160615) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "linkedin_email"
-    t.string   "linkedin_pw"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "linkedin_member_id"
   end
 
   create_table "videos", force: true do |t|
