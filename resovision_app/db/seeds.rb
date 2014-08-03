@@ -11,7 +11,7 @@ liza = User.create(
 )
 
 # Resovision:
-liza.resovision.push(
+liza.resovision =
   resovision_one = Resovision.create(
   first_name: "Liza",
   last_name: "Ramo",
@@ -20,9 +20,9 @@ liza.resovision.push(
   industry: "Public Relations and Communications",
   num_positions: 5,
   num_educations: 1,
-  pic_url: "http://m.c.lnkd.licdn.com/mpr/mprx/0_2bYEOgZpbv-QM7PhC_SJO0w-51vbv2-haiEzO0VisvTBEeL88TmQKxmDwOzZ9I12DkyNAZH527sk",
-  user_id: 1
-))
+  summary: "Awesome web dev.",
+  pic_url: "http://m.c.lnkd.licdn.com/mpr/mprx/0_2bYEOgZpbv-QM7PhC_SJO0w-51vbv2-haiEzO0VisvTBEeL88TmQKxmDwOzZ9I12DkyNAZH527sk"
+)
 
 # Positions:
 resovision_one.positions.push(
@@ -34,8 +34,7 @@ resovision_one.positions.push(
     start_month: 8,
     end_year: nil,
     end_month: nil,
-    company_name: "IBM",
-    resovision_id: 1
+    company_name: "IBM"
   ),
   position_one = Position.create(
     title: "Social Media Content Developer & IBM SmartCloud Content Manager",
@@ -45,8 +44,7 @@ resovision_one.positions.push(
     start_month: 4,
     end_year: 2012,
     end_month: 8,
-    company_name: "IBM",
-    resovision_id: 1
+    company_name: "IBM"
   ),
   position_two = Position.create(
     title: "Media Content Developer",
@@ -56,8 +54,7 @@ resovision_one.positions.push(
     start_month: 3,
     end_year: 2012,
     end_month: 4,
-    company_name: "IBM",
-    resovision_id: 1
+    company_name: "IBM"
   )
 )
 
@@ -68,16 +65,14 @@ resovision_one.educations.push(
     degree: "BA",
     field_of_study: "Communication Studies",
     start_year: 2006,
-    end_year: 2010,
-    resovision_id: 1
+    end_year: 2010
   ),
   education_one = Education.create(
     school_name: "Hendersonville High School",
     degree: nil,
     field_of_study: nil,
     start_year: 2002,
-    end_year: 2006,
-    resovision_id: 1
+    end_year: 2006
   )
 )
 

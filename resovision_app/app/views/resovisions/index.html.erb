@@ -1,0 +1,6 @@
+<h4>All Users' Resovisions</h4>
+<hr>
+
+<% @resovisions.each do |resovision| %>
+  <%= link_to resovision.first_name, resovision_path(resovision) %><br>
+<% end %>

@@ -1,23 +1,36 @@
-<h1 class="first-name"></h1>
-<h1 class="last-name"></h1>
-<h2 class="location"></h2><br>
-<h2 class="industry"></h2><br>
-<h3 class="headline"></h3><br>
-<img class="pic-url" src= "pic-url">
 
-<% @positions.each do |position| %> 
-    <p class="position">
-        <h4 class="title"></h4>
-        <h5 class="company"></h5>
-        <li class="start-date"></li>
-        <li class="summary"></li>
-    </p>
-<% end %> 
+<img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
 
-<% @educations.each do |education| %>
-    <p class="education">
-        <h4 class="school-name"></h4><br>
-        <h5 class="degree"></h5><br>
-        <li class="years-attended"></li>
-    </p>
-<% end %> 
+<h4 class="first-name"><%= @resovision.first_name %></h4>
+<h4 class="last-name"><%= @resovision.last_name %></h4>
+<h4 class="location">Location: <%= @resovision.location %></h4>
+<h4 class="industry">Industry: <%= @resovision.industry %></h4>
+<h4 class="headline">Headline: <%= @resovision.headline %></h4>
+<h4 class="summary">Summary: <%= @resovision.summary %></h4>
+
+<div class="positions"> Positions:
+  <% @resovision.positions.each do |position| %>
+      <p class="position">
+          <h6 class="company">Company: <%= position.company_name %></h6>
+          <h6 class="title">Title: <%= position.title %></h6>
+          <h6 class="summary">Summary: <%= position.summary %></h6>
+          <h6 class="is-current">Currently working here? <%= position.is_current %></h6>
+          <h6 class="start-month">Start month: <%= position.start_month %></h6>
+          <h6 class="start-year">Start year: <%= position.start_year %></h6>
+          <h6 class="end-month">End month: <%= position.end_month %></h6>
+          <h6 class="end-year">End year: <%= position.end_year %></h6>
+      </p>
+  <% end %>
+</div>
+
+<div class="educations"> Education:
+  <% @resovision.educations.each do |education| %>
+      <p class="education">
+          <h6 class="school-name">School name: <%= education.school_name %></h6>
+          <h6 class="degree">Degree: <%= education.degree %></h6>
+          <h6 class="field-of-study">Field of study: <%= education.field_of_study %></h6>
+          <h6 class="start-year">Start year: <%= education.start_year %></h6>
+          <h6 class="end-year">End year: <%= education.end_year %></h6>
+      </p>
+  <% end %>
+</div>

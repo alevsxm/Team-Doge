@@ -6,13 +6,6 @@ class ResovisionsController < ApplicationController
 		@resovisions = Resovision.all
 	end
 
-	def edit
-		@resovision = Resovision.find('linkedin_id')
-		@educations= Educations.where(id: 'resovision_id')
-		@positions=  Positions.where(id: 'resovision_id')
-		@videos= Videos.where(id: 'resovision_id')
-	end
-
 	def new
 		@resovision = Resovision.new
 	end
@@ -27,24 +20,24 @@ class ResovisionsController < ApplicationController
 	end
 
 	def show
-		@resovision = Resovision.find('linkedin_id')
-		@educations= Educations.where(id: 'resovision_id')
-		@positions=  Positions.where(id: 'resovision_id')
-		@videos= Videos.where(id: 'resovision_id')
+		@resovision = Resovision.find(params[:id])
+		@educations = Education.where(resovision_id: params[:id])
+		@positions =  Position.where(resovision_id: params[:id])
+		# @videos= Videos.where(resovision_id: params[:id])
 	end
 
 	def edit
-		@resovision = Resovision.find('linkedin_id')
-		@educations= Educations.where(id: 'resovision_id')
-		@positions=  Positions.where(id: 'resovision_id')
-		@videos= Videos.where(id: 'resovision_id')
+		@resovision = Resovision.find(params[:id])
+		@educations = Education.where(resovision_id: params[:id])
+		@positions =  Position.where(resovision_id: params[:id])
+		# @videos= Videos.where(resovision_id: params[:id])
 	end
 
 	def update
-		@resovision = Resovision.find('linkedin_id')
-		@educations= Educations.where(id: 'resovision_id')
-		@positions=  Positions.where(id: 'resovision_id')
-		@videos= Videos.where(id: 'resovision_id')
+		@resovision = Resovision.find(params[:id])
+		@educations = Education.where(resovision_id: params[:id])
+		@positions =  Position.where(resovision_id: params[:id])
+		# @videos= Videos.where(resovision_id: params[:id])
 
 		if @resovision.update(resovision_params)
       redirect_to(resovision_path(@resovision))
@@ -55,7 +48,8 @@ class ResovisionsController < ApplicationController
 
 	def destroy
 		@resovision = Resovision.find(params[:id])
-    @resovision.destroy
+    ## @resovision.empty?
+		@resovision.destroy
     redirect_to user_path(@user)
 	end
 
