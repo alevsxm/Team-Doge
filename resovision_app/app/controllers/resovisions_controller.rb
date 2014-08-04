@@ -1,3 +1,5 @@
+require 'pry-rails'
+require 'linkedin'
 class ResovisionsController < ApplicationController
 
 	before_action :authenticate, only: [:new, :create]
