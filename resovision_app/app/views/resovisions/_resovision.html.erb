@@ -6,7 +6,14 @@
 <h4 class="location">Location: <%= @resovision.location %></h4>
 <h4 class="industry">Industry: <%= @resovision.industry %></h4>
 <h4 class="headline">Headline: <%= @resovision.headline %></h4>
-<h4 class="summary">Summary: <%= @resovision.summary %></h4>
+<h4 class="summary">Summary: <%= @resovision.summary %>
+  <ziggeo ziggeo-width=320
+          ziggeo-height=240
+          ziggeo-key='<%= @resovision.id %>summary'
+          ziggeo-limit=120>
+  </ziggeo>
+</h4>
+
 
 <div class="positions"> Positions:
   <% @resovision.positions.each do |position| %>
@@ -19,6 +26,11 @@
           <h6 class="start-year">Start year: <%= position.start_year %></h6>
           <h6 class="end-month">End month: <%= position.end_month %></h6>
           <h6 class="end-year">End year: <%= position.end_year %></h6>
+         <ziggeo ziggeo-width=320
+            ziggeo-height=240
+            ziggeo-key='<%= position.title %>'
+            ziggeo-limit=120>
+          </ziggeo>
       </p>
   <% end %>
 </div>
@@ -31,6 +43,11 @@
           <h6 class="field-of-study">Field of study: <%= education.field_of_study %></h6>
           <h6 class="start-year">Start year: <%= education.start_year %></h6>
           <h6 class="end-year">End year: <%= education.end_year %></h6>
+          <ziggeo ziggeo-width=320
+            ziggeo-height=240
+            ziggeo-key='<%= education.school_name %>'
+            ziggeo-limit=120>
+          </ziggeo>
       </p>
   <% end %>
 </div>
