@@ -12,6 +12,11 @@
           ziggeo-key='<%= @resovision.id %>summary'
           ziggeo-limit=120>
   </ziggeo>
+
+  <ziggeo ziggeo-video='<%= @resovision.id %>summary'
+        ziggeo-width=320
+        ziggeo-height=240>
+  </ziggeo>
 </h4>
 
 
@@ -31,6 +36,11 @@
             ziggeo-key='<%= position.title %>'
             ziggeo-limit=120>
           </ziggeo>
+
+        <ziggeo ziggeo-video='<%= position.title %>'
+        ziggeo-width=320
+        ziggeo-height=240>
+        </ziggeo>
       </p>
   <% end %>
 </div>
@@ -47,6 +57,11 @@
             ziggeo-height=240
             ziggeo-key='<%= education.school_name %>'
             ziggeo-limit=120>
+          </ziggeo>
+
+          <ziggeo ziggeo-video='<%= education.school_name %>'
+            ziggeo-width=320
+            ziggeo-height=240>
           </ziggeo>
       </p>
   <% end %>
