@@ -67,7 +67,7 @@ resovision_one.educations.push(
     start_year: 2006,
     end_year: 2010
   ),
-  education_one = Education.create(
+  education_two = Education.create(
     school_name: "Hendersonville High School",
     degree: nil,
     field_of_study: nil,
