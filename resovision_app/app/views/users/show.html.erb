@@ -5,3 +5,5 @@
 <h4 class="first-name"><%= @user.resovision.first_name %></h4>
 <h4 class="last-name"><%= @user.resovision.last_name %></h4>
 <h4 class="location">Location: <%= @user.resovision.location %></h4>
+
+<p><%= link_to "View Your Resovision", resovision_path(@user.resovision) %></p>
