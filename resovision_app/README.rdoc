@@ -1,9 +1,12 @@
 == README
 
+Heroku URL: 
+http://peaceful-lowlands-6813.herokuapp.com/
 
-Lucid Chart ERD:
+Lucid Chart ERDs:
 https://www.lucidchart.com/documents/edit/df60208e-dcc9-4ed9-a79d-865a4f0d50e4/0
 
+<<<<<<< HEAD
 Routes notes:
 
 Welcome 
@@ -31,3 +34,29 @@ RESOVISIONS
    * User’s public resovision 
 
 
+=======
+Trello user stories: 
+https://trello.com/b/tZDU4D6J/team-doge-project-2-res-o-vision
+
+Liza's Evernotes on Environment Variables, API Keys & Heroku:
+https://www.evernote.com/shard/s273/sh/c3ed1eea-dd39-4cee-a789-da1803ac31cd/c32ae959dea68575593ed8de27daac68
+
+LINKEDIN API DOCS:
+
+Getting Started with the JavaScript API:
+https://developer.linkedin.com/documents/getting-started-javascript-api
+
+Application Response Data Structure:
+https://developer.linkedin.com/application-response-data-structure
+
+Full profile - fields:
+https://developer.linkedin.com/documents/profile-fields#fullprofile
+
+Exchanging JS API Tokens for REST API OAuth Tokens:
+https://developer.linkedin.com/documents/exchange-jsapi-tokens-rest-api-oauth-tokens
+
+
+
+
+
+>>>>>>> 7f6a24ee0f5cc5ef67d17b8caa66f332ea22a677
