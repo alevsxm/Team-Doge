@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801160615) do
+ActiveRecord::Schema.define(version: 20140803200953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,45 +24,48 @@ ActiveRecord::Schema.define(version: 20140801160615) do
     t.integer  "resovision_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "field_of_study"
   end
 
   create_table "positions", force: true do |t|
     t.string   "title"
-    t.string   "summary"
     t.integer  "start_year"
-    t.integer  "start_month"
-    t.string   "is_current"
     t.string   "company_name"
     t.integer  "resovision_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_current"
+    t.integer  "start_month"
+    t.integer  "end_year"
+    t.integer  "end_month"
+    t.text     "summary"
   end
 
   create_table "resovisions", force: true do |t|
     t.string  "linkedin_id"
     t.string  "first_name"
     t.string  "last_name"
-    t.string  "headline"
     t.string  "location"
     t.string  "industry"
     t.integer "num_positions"
     t.integer "num_educations"
-    t.text    "pic_url"
     t.integer "user_id"
+    t.text    "summary"
+    t.text    "headline"
+    t.text    "pic_url"
   end
 
   create_table "users", force: true do |t|
-    t.string   "linkedin_email"
-    t.string   "linkedin_pw"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "linkedin_member_id"
   end
 
   create_table "videos", force: true do |t|
-    t.string  "video_name"
     t.integer "resovision_id"
     t.integer "position_id"
     t.integer "education_id"
+    t.text    "video_name"
   end
 
 end
