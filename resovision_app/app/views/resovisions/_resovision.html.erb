@@ -3,8 +3,8 @@
   <!-- ziggeo player  -->
   <div class="player">
     <ziggeo ziggeo-video='_<%= @resovision.summary %>'
-      ziggeo-width=320
-      ziggeo-height=240>
+      ziggeo-width=420
+      ziggeo-height=340>
     </ziggeo>
   </div>
   <button class='show-ziglet'>Ask <%= @resovision.first_name %> about it.</button>
@@ -22,14 +22,15 @@
 <hr> 
 <% if @resovision.num_positions > 0 %>
   <div class="positions"> Positions:
+    <hr> 
     <% @resovision.positions.each do |position| %>
         <p class="position">
           <div class= 'ziglets'>
             <!-- ziggeo player  -->
             <div class="player">
               <ziggeo ziggeo-video='_<%= position.title %>'
-                ziggeo-width=320
-                ziggeo-height=240>
+                ziggeo-width=420
+                ziggeo-height=340>
               </ziggeo>
             </div>
             <button class='show-ziglet'>Ask <%= @resovision.first_name %> about it.</button>
@@ -42,16 +43,15 @@
           <h6 class="start-year">Start year: <%= position.start_year %></h6>
           <h6 class="end-month">End month: <%= position.end_month %></h6>
           <h6 class="end-year">End year: <%= position.end_year %></h6>
-            
         </p>
         <hr>
     <% end %>
   </div>
-  <hr>
 <% end %>
 
 <% if @resovision.num_educations > 0 %>
   <div class="educations"> Education:
+    <hr> 
     <% @resovision.educations.each do |education| %>
         <p class="education">
           <div class= 'ziglets'>
@@ -59,8 +59,8 @@
             <!-- ziggeo player  -->
             <div class="player">
               <ziggeo ziggeo-video='_<%= education.school_name %>'
-                ziggeo-width=220
-                ziggeo-height=140>
+                ziggeo-width=320
+                ziggeo-height=240>
               </ziggeo>
             </div>
             <button class='show-ziglet'>Ask <%= @resovision.first_name %> about it.</button>
@@ -74,5 +74,4 @@
         <hr>
     <% end %>
   </div>
-  <hr>
 <% end %> 
