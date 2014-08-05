@@ -54,7 +54,7 @@ require 'json'
   # first_name = response_hash["firstName"]
   # last_name = response_hash["lastName"]
   # headline = response_hash["headline"]
-  #! location = response_hash["location"]["name"]
+  # location = response_hash["location"]["name"]
   # industry = response_hash["industry"]
   # num_positions = response_hash["positions"]["_total"]
   # num_educations = response_hash["educations"]["_total"]
@@ -79,7 +79,7 @@ require 'json'
 
   # school_name = response_hash["educations"]["values"][0]["schoolName"]
   # degree = response_hash["educations"]["values"][0]["degree"]
-  #! field_of_study = response_hash["educations"]["values"][0]["fieldOfStudy"]
+  # field_of_study = response_hash["educations"]["values"][0]["fieldOfStudy"]
   # start_year = response_hash["educations"]["values"][0]["startDate"]["year"]
   # end_year = response_hash["educations"]["values"][0]["endDate"]["year"]
 
