@@ -18,7 +18,7 @@ liza.resovision =
   headline: "Content Developer at IBM",
   location: "Greater New York City Area",
   industry: "Public Relations and Communications",
-  num_positions: 5,
+  num_positions: 3,
   num_educations: 1,
   summary: "Awesome web dev.",
   pic_url: "http://m.c.lnkd.licdn.com/mpr/mprx/0_2bYEOgZpbv-QM7PhC_SJO0w-51vbv2-haiEzO0VisvTBEeL88TmQKxmDwOzZ9I12DkyNAZH527sk"
@@ -67,7 +67,7 @@ resovision_one.educations.push(
     start_year: 2006,
     end_year: 2010
   ),
-  education_one = Education.create(
+  education_two = Education.create(
     school_name: "Hendersonville High School",
     degree: nil,
     field_of_study: nil,

@@ -5,17 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-    api_key: 75yxb7noe10oi2
-    onLoad: onLinkedInLoad
-    authorize: true
-  </script>
-  <script type="text/javascript">
-  // 2. Runs when the JavaScript framework is loaded
-  function onLinkedInLoad() {
-    IN.Event.on(IN, "auth", onLinkedInAuth);
-  }
 
+<<<<<<< HEAD
   // 2. Runs when the viewer has authenticated
   function onLinkedInAuth() {
     IN.API.Profile("me")
@@ -30,11 +21,15 @@
       "<p id=\"" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + " "+ member.positions +"</p>";
   }
 </script>
+=======
+  <link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
+  <script src="//assets.ziggeo.com/js/ziggeo-json2-betajs-player.min.js"></script>
+  <script>ZiggeoApi.token = "1a96227f1aca8f46d85f7a270b8e8266";</script>
+
+>>>>>>> 0fee7917be75fee759fddeeae93c809b3c29bead
 </head>
 <body>
-  <script type="in/Login"></script>
 
-  <div id="profiles"></div>
 
 <%= yield %>
 

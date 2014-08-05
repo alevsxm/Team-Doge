@@ -25,5 +25,3 @@ https://developer.linkedin.com/documents/profile-fields#fullprofile
 
 Exchanging JS API Tokens for REST API OAuth Tokens:
 https://developer.linkedin.com/documents/exchange-jsapi-tokens-rest-api-oauth-tokens
-
-
