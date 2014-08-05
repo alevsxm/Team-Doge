@@ -1,5 +1,4 @@
-require 'pry-rails'
-require 'linkedin'
+
 class ResovisionsController < ApplicationController
 
 	before_action :authenticate, only: [:new, :create]
@@ -42,7 +41,7 @@ class ResovisionsController < ApplicationController
 		# @videos= Videos.where(resovision_id: params[:id])
 
 		if @resovision.update(resovision_params)
-      redirect_to(resovision_path(@resovision))
+			render json: @resovision
     else
       redirect_to edit_resovision_path(@resovision)
     end
