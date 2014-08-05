@@ -10,13 +10,14 @@
   <button class='show-ziglet'>Ask <%= @resovision.first_name %> about it.</button>
 </div>
 <img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
-
-<h4 class="first-name"><%= @resovision.first_name %></h4>
-<h4 class="last-name"><%= @resovision.last_name %></h4>
-<h4 class="location">Location: <%= @resovision.location %></h4>
-<h4 class="industry">Industry: <%= @resovision.industry %></h4>
-<h4 class="headline">Headline: <%= @resovision.headline %></h4>
-<h4 class="summary">Summary: <%= @resovision.summary %></h4>
+<div class="name">
+  <h4 class="name"><%= @resovision.first_name %> <%= @resovision.last_name %></h4>
+<div class="profile-heading"
+  <li class="location"><%= @resovision.location %></li>
+  <li class="industry"><%= @resovision.industry %></li>
+  <li class="headline"><%= @resovision.headline %></li>
+  <li class="summary"><%= @resovision.summary %></li>
+</div>
 
 <hr> 
 <% if @resovision.num_positions > 0 %>
@@ -34,14 +35,11 @@
             </div>
             <button class='show-ziglet'>Ask <%= @resovision.first_name %> about it.</button>
           </div>
-          <h6 class="company">Company: <%= position.company_name %></h6>
-          <h6 class="title">Title: <%= position.title %></h6>
-          <h6 class="summary">Summary: <%= position.summary %></h6>
-          <h6 class="is-current">Currently working here? <%= position.is_current %></h6>
-          <h6 class="start-month">Start month: <%= position.start_month %></h6>
-          <h6 class="start-year">Start year: <%= position.start_year %></h6>
-          <h6 class="end-month">End month: <%= position.end_month %></h6>
-          <h6 class="end-year">End year: <%= position.end_year %></h6>
+          <h6 class="company"><%= position.company_name %></h6>
+          <h6 class="title"><%= position.title %></h6>
+          <ul class="summary"><%= position.summary %></ul>
+          <ul class="is-current">Currently working here? <%= position.is_current %></ul>
+          <ul class="dates"> <%= position.start_month %>/<%= position.start_year %> - <%= position.end_month %>/<%= position.end_year %></ul>
         </p>
         <hr>
     <% end %>
@@ -63,11 +61,10 @@
             </div>
             <button class='show-ziglet'>Ask <%= @resovision.first_name %> about it.</button>
           </div>
-          <h6 class="school-name">School name: <%= education.school_name %></h6>
-          <h6 class="degree">Degree: <%= education.degree %></h6>
-          <h6 class="field-of-study">Field of study: <%= education.field_of_study %></h6>
-          <h6 class="start-year">Start year: <%= education.start_year %></h6>
-          <h6 class="end-year">End year: <%= education.end_year %></h6>
+          <h6 class="school-name"><%= education.school_name %></h6>
+          <h6 class="degree"><%= education.degree %></h6>
+          <ul class="field-of-study">Field of study: <%= education.field_of_study %></ul>
+          <ul class="start-year"><%= education.start_year %> - <%= education.end_year %></ul>
         </p>
         <hr>
     <% end %>

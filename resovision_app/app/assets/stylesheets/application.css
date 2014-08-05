@@ -14,15 +14,5 @@
  *= require_self
  */
 
-.player {
-	visibility: hidden;
-	float: right; 
-}
-.recorder {
-	visibility: hidden;
-	float: right; 
-}
-body {
-	max-width: 1000px; 
-}
+
 
