@@ -64,7 +64,6 @@ GEM
     minitest (5.4.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
-<<<<<<< HEAD
     multipart-post (2.0.0)
     oauth (0.4.7)
     oauth2 (0.9.4)
@@ -73,8 +72,6 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (~> 1.2)
-=======
->>>>>>> 0fee7917be75fee759fddeeae93c809b3c29bead
     pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.0)
@@ -172,11 +169,8 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
   oauth
   oauth2
-=======
->>>>>>> 0fee7917be75fee759fddeeae93c809b3c29bead
   pg
   pry-rails
   rails (= 4.1.4)
