@@ -25,7 +25,7 @@
 </div><br>
 
 <% if @resovision.num_positions > 0 %>
-  <div class="all-positions"> Positions:
+  <div class="all-positions" data-id="<%= @resovision.position.id %>"> Positions:
     <% @resovision.positions.each do |position| %>
         <p class="position">
              <div class= 'ziglets'>
@@ -53,9 +53,9 @@
             <p>Start year:</p>
             <li class="start-year"><%= position.start_year %></li>
             <p>End month:</p>
-            <li class="end-month"> <%= position.end_month %></li>
+            <li class="end-month"><%= position.end_month %></li>
             <p>End year:</p>
-            <li class="end-year"> <%= position.end_year %></li>
+            <li class="end-year"><%= position.end_year %></li>
 
             <button type="button" class="edit-position">Edit Position</button><br>
 

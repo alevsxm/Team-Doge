@@ -4,10 +4,10 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function() {
-  console.log("JS for Resovisions");
+  console.log("Oh, Hai.");
 
+  // Resovision
   $('body').on('click', '.resovision-info', editInfo );
-
   $('body').on('keypress', '.edit-description', function(event){
       var editInput = $(this);
       if (event.which === 13) {
@@ -15,6 +15,11 @@ $(document).ready(function() {
       }
     });
 
+  $('body').on('click', '.all-positions', editPosition );
+
+  /////////////////////////////////////////////////////////
+  // Don't forget to comment this back in before commit //
+  ////////////////////////////////////////////////////////
   $('.show-ziglet').on('click', function(){
     var player = $(this).parent().find('.player');
     console.log(player);
@@ -53,6 +58,8 @@ function editInfo() {
 function updateInfo() {
   var editInput = $(this);
   var editSpan = editInput.parent();
+  var resovisionID = editInput.parent().parent().data('id');
+  var editSpanArray = editInput.parent().parent().children();
 
   var newFirstName = editSpan.parent().find('#first_name').children().val();
   var newLastName = editSpan.parent().find('#last_name').children().val();
@@ -60,13 +67,6 @@ function updateInfo() {
   var newIndustry = editSpan.parent().find('#industry').children().val();
   var newSummary = editSpan.parent().find('#summary').children().val();
   var newHeadline = editSpan.parent().find('#headline').children().val();
-
-
-
-  var resovisionID = editInput.parent().parent().data('id');
-  var editSpanArray = editInput.parent().parent().children();
-
-
 
   var params = { resovision: { first_name: newFirstName, last_name: newLastName,
                                location: newLocation, industry: newIndustry,
@@ -85,6 +85,11 @@ function updateInfo() {
     });
 }
 
+function editPosition() {
+
+
+
+}
 
 
 
