@@ -1,4 +1,22 @@
-
+<div class= 'ziglets'>
+ <!-- ziggeo recorder  -->
+ <div class="recorder">
+   <ziggeo ziggeo-width=320
+      ziggeo-height=240
+      ziggeo-key='<%= @resovision.summary %>'
+      ziggeo-limit=120>
+   </ziggeo>
+  </div>
+  <!-- ziggeo player  -->
+  <div class="player">
+    <ziggeo ziggeo-video='_<%= @resovision.summary %>'
+      ziggeo-width=320
+      ziggeo-height=240>
+    </ziggeo>
+  </div>
+  <button class='show-ziglet'>View your video.</button>
+  <button class='record-ziglet'>Record a video.</button>
+</div>
 <div class="resovision-info" data-id="<%= @resovision.id %>" >
   <img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
   <h4 class="resovision-element" id="first_name"><%= @resovision.first_name %></h4>
@@ -10,24 +28,32 @@
   <p>Headline:</p>
   <h4 class="resovision-element" id="headline"><%= @resovision.headline %></h4>
   <p>Summary:</p>
-  <h4 class="resovision-element" id="summary"><%= @resovision.summary %>
-    <ziggeo ziggeo-width=320
-            ziggeo-height=240
-            ziggeo-key='<%= @resovision.id %>summary'
-            ziggeo-limit=120>
-    </ziggeo>
-
-    <ziggeo ziggeo-video='<%= @resovision.id %>summary'
-          ziggeo-width=320
-          ziggeo-height=240>
-    </ziggeo>
-  </h4>
+  <h4 class="resovision-element" id="summary"><%= @resovision.summary %></h4>
 </div><br>
 
 <% if @resovision.num_positions > 0 %>
   <div class="all-positions"> Positions:
     <% @resovision.positions.each do |position| %>
         <p class="position">
+             <div class= 'ziglets'>
+           <!-- ziggeo recorder  -->
+           <div class="recorder">
+             <ziggeo ziggeo-width=320
+                ziggeo-height=240
+                ziggeo-key='<%= position.title %>'
+                ziggeo-limit=120>
+             </ziggeo>
+            </div>
+            <!-- ziggeo player  -->
+            <div class="player">
+              <ziggeo ziggeo-video='_<%= position.title %>'
+                ziggeo-width=320
+                ziggeo-height=240>
+              </ziggeo>
+            </div>
+            <button class='show-ziglet'>View your video.</button>
+            <button class='record-ziglet'>Record a video.</button>
+          </div>
             <h6 class="company">Company: <%= position.company_name %></h6>
             <h6 class="title">Title: <%= position.title %></h6>
             <h6 class="summary">Summary: <%= position.summary %></h6>
@@ -39,16 +65,6 @@
 
             <button type="button" class="edit-position">Edit Position</button><br>
 
-           <ziggeo ziggeo-width=320
-              ziggeo-height=240
-              ziggeo-key='<%= position.title %>'
-              ziggeo-limit=120>
-            </ziggeo>
-
-            <ziggeo ziggeo-video='<%= position.title %>'
-              ziggeo-width=320
-              ziggeo-height=240>
-            </ziggeo>
         </p>
     <% end %>
   </div>
@@ -58,21 +74,31 @@
   <div class="all-educations"> Education:
     <% @resovision.educations.each do |education| %>
         <p class="education">
-            <h6 class="school-name">School name: <%= education.school_name %></h6>
-            <h6 class="degree">Degree: <%= education.degree %></h6>
-            <h6 class="field-of-study">Field of study: <%= education.field_of_study %></h6>
-            <h6 class="start-year">Start year: <%= education.start_year %></h6>
-            <h6 class="end-year">End year: <%= education.end_year %></h6>
-            <ziggeo ziggeo-width=320
-              ziggeo-height=240
+          <div class= 'ziglets'>
+           <!-- ziggeo recorder  -->
+          <div class="recorder">
+           <ziggeo ziggeo-width=220
+              ziggeo-height=140
               ziggeo-key='<%= education.school_name %>'
               ziggeo-limit=120>
+           </ziggeo>
+          </div>
+          <!-- ziggeo player  -->
+          <div class="player">
+            <ziggeo ziggeo-video='_<%= education.school_name %>'
+              ziggeo-width=220
+              ziggeo-height=140>
             </ziggeo>
+          </div>
+            <button class='show-ziglet'>View your video.</button>
+            <button class='record-ziglet'>Record a video.</button>
 
-            <ziggeo ziggeo-video='<%= education.school_name %>'
-              ziggeo-width=320
-              ziggeo-height=240>
-            </ziggeo>
+          </div>
+          <h6 class="school-name">School name: <%= education.school_name %></h6>
+          <h6 class="degree">Degree: <%= education.degree %></h6>
+          <h6 class="field-of-study">Field of study: <%= education.field_of_study %></h6>
+          <h6 class="start-year">Start year: <%= education.start_year %></h6>
+          <h6 class="end-year">End year: <%= education.end_year %></h6>
         </p>
     <% end %>
   </div>
