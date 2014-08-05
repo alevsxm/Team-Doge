@@ -27,6 +27,7 @@ $(document).ready(function() {
 
       recorder.css('visibility', 'visible');
   });
+
 });
 
 function editInfo() {
