@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  root 'welcome#home'
+  get '/welcome' => 'welcome#index', as: :resovision
   get '/accept' => 'welcome#accept'
 
   resources :users, :resovisions, :positions, :educations
