@@ -8,7 +8,6 @@
     </ziggeo>
   </div>
   <button class='show-ziglet'>Ask <%= @resovision.first_name %> about it.</button>
-
 </div>
 <img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
 
@@ -55,7 +54,6 @@
     <% @resovision.educations.each do |education| %>
         <p class="education">
           <div class= 'ziglets'>
-
             <!-- ziggeo player  -->
             <div class="player">
               <ziggeo ziggeo-video='_<%= education.school_name %>'
