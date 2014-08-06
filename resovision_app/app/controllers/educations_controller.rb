@@ -9,4 +9,9 @@ class EducationsController < ApplicationController
     end
   end
 
+  def education_params
+    params.require(:education).permit(:school_name, :degree, :field_of_study,
+                                      :start_year, :end_year)
+  end
+  
 end

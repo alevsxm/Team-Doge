@@ -1,71 +1,48 @@
 <div class= 'ziglets'>
- <!-- ziggeo recorder  -->
- <div class="recorder">
-   <ziggeo ziggeo-width=320
-      ziggeo-height=240
-      ziggeo-key='<%= @resovision.summary %>'
-      ziggeo-limit=120>
-   </ziggeo>
+  <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video.</button>  
   </div>
-  <!-- ziggeo player  -->
-  <div class="player">
-    <ziggeo ziggeo-video='_<%= @resovision.summary %>'
-      ziggeo-width=320
-      ziggeo-height=240>
-    </ziggeo>
-  </div>
-  <button class='show-ziglet'>View your video.</button>
-  <button class='record-ziglet'>Record a video.</button>
 </div>
 <div class="resovision-info" data-id="<%= @resovision.id %>" >
   <img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
-  <h4 class="resovision-element" id="first_name"><%= @resovision.first_name %></h4>
-  <h4 class="resovision-element" id="last_name"><%= @resovision.last_name %></h4>
+  <li class="resovision-element" id="first_name"><%= @resovision.first_name %></li>
+  <li class="resovision-element" id="last_name"><%= @resovision.last_name %></li>
   <p>Location:</p>
-  <h4 class="resovision-element" id="location"><%= @resovision.location %></h4>
+  <li class="resovision-element" id="location"><%= @resovision.location %></li>
   <p>Industry:</p>
-  <h4 class="resovision-element" id="industry"><%= @resovision.industry %></h4>
+  <li class="resovision-element" id="industry"><%= @resovision.industry %></li>
   <p>Headline:</p>
-  <h4 class="resovision-element" id="headline"><%= @resovision.headline %></h4>
+  <li class="resovision-element" id="headline"><%= @resovision.headline %></li>
   <p>Summary:</p>
-  <h4 class="resovision-element" id="summary"><%= @resovision.summary %></h4>
+  <li class="resovision-element" id="summary"><%= @resovision.summary %></li>
 </div><br>
-
 <% if @resovision.num_positions > 0 %>
   <div class="all-positions"> Positions:
     <% @resovision.positions.each do |position| %>
+    
         <p class="position">
-             <div class= 'ziglets'>
-           <!-- ziggeo recorder  -->
-           <div class="recorder">
-             <ziggeo ziggeo-width=320
-                ziggeo-height=240
-                ziggeo-key='<%= position.title %>'
-                ziggeo-limit=120>
-             </ziggeo>
-            </div>
-            <!-- ziggeo player  -->
-            <div class="player">
-              <ziggeo ziggeo-video='_<%= position.title %>'
-                ziggeo-width=320
-                ziggeo-height=240>
-              </ziggeo>
-            </div>
-            <button class='show-ziglet'>View your video.</button>
-            <button class='record-ziglet'>Record a video.</button>
+          <div class= 'ziglets'>
+            <button class='record-ziglet' id='<%= position.company_name %><%= @resovision.last_name%>'>Record a video</button>
           </div>
-            <h6 class="company">Company: <%= position.company_name %></h6>
-            <h6 class="title">Title: <%= position.title %></h6>
-            <h6 class="summary">Summary: <%= position.summary %></h6>
-            <h6 class="is-current">Currently working here? <%= position.is_current %></h6>
-            <h6 class="start-month">Start month: <%= position.start_month %></h6>
-            <h6 class="start-year">Start year: <%= position.start_year %></h6>
-            <h6 class="end-month">End month: <%= position.end_month %></h6>
-            <h6 class="end-year">End year: <%= position.end_year %></h6>
 
-            <button type="button" class="edit-position">Edit Position</button><br>
+          <p>Company:</p>
+          <li class="position-element" id="company_name"><%= position.company_name %>
+          <p>Title:</p>
+          <li class="position-element" id="title"><%= position.title %></li>
+          <p>Summary:</p>
+          <li class="position-element" id="summary"><%= position.summary %></li>
+          <p>Currently working here?</p>
+          <li class="position-element" id="is_current"><%= position.is_current %></li>
+          <p>Start month:</p>
+          <li class="position-element" id="start_month"><%= position.start_month %></li>
+          <p>Start year:</p>
+          <li class="position-element" id="start_year"><%= position.start_year %></li>
+          <p>End month:</p>
+          <li class="position-element" id="end_month"><%= position.end_month %></li>
+          <p>End year:</p>
+          <li class="position-element" id="end_year"><%= position.end_year %></li>
 
-        </p>
+          <!-- <button type="button" class="edit-position">Edit Position</button><br> -->
+        </div>
     <% end %>
   </div>
 <% end %>
@@ -75,31 +52,20 @@
     <% @resovision.educations.each do |education| %>
         <p class="education">
           <div class= 'ziglets'>
-           <!-- ziggeo recorder  -->
-          <div class="recorder">
-           <ziggeo ziggeo-width=220
-              ziggeo-height=140
-              ziggeo-key='<%= education.school_name %>'
-              ziggeo-limit=120>
-           </ziggeo>
+            <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video.</button>
           </div>
-          <!-- ziggeo player  -->
-          <div class="player">
-            <ziggeo ziggeo-video='_<%= education.school_name %>'
-              ziggeo-width=220
-              ziggeo-height=140>
-            </ziggeo>
-          </div>
-            <button class='show-ziglet'>View your video.</button>
-            <button class='record-ziglet'>Record a video.</button>
 
-          </div>
-          <h6 class="school-name">School name: <%= education.school_name %></h6>
-          <h6 class="degree">Degree: <%= education.degree %></h6>
-          <h6 class="field-of-study">Field of study: <%= education.field_of_study %></h6>
-          <h6 class="start-year">Start year: <%= education.start_year %></h6>
-          <h6 class="end-year">End year: <%= education.end_year %></h6>
-        </p>
+          <p>School name:</p>
+          <li class="education-element" id="school_name"><%= education.school_name %></li>
+          <p>Degree:</p>
+          <li class="education-element" id="degree"><%= education.degree %></li>
+          <p>Field of study: </p>
+          <li class="education-element" id="field_of_study"><%= education.field_of_study %></li>
+          <p>Start year:</p>
+          <li class="education-element" id="start_year"><%= education.start_year %></li>
+          <p>End year:</p>
+          <li class="education-element" id="end_year"><%= education.end_year %></li>
+        </div>
     <% end %>
   </div>
 <% end %>
