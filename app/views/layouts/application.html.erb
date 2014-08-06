@@ -2,9 +2,15 @@
 <html>
 <head>
   <title>ResovisionApp</title>
+  <%= stylesheet_link_tag    'assets/reset' %>
+  <%= stylesheet_link_tag    'assets/skeleton' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
   <script src="//assets.ziggeo.com/js/ziggeo-json2-betajs-player.min.js"></script>
@@ -12,19 +18,20 @@
 
 </head>
 <body>
-<% if current_user %>
-<header>
-  <nav>
-    <ul>
-      <li>Welcome, <%= current_user.resovision.first_name %></li>
-      <li><%= link_to 'Log Out', logout_path %></li>
-      <li><%= link_to 'Home', user_path(current_user) %></li>
-    </ul>
-  </nav>
-</header>
-<% end %>
+<div class="container">
+  <% if current_user %>
+  <header>
+    <nav>
+      <ul>
+        <li>Welcome, <%= current_user.resovision.first_name %></li>
+        <li><%= link_to 'Log Out', logout_path %></li>
+        <li><%= link_to 'Home', user_path(current_user) %></li>
+      </ul>
+    </nav>
+  </header>
+  <% end %>
 
-<%= yield %>
-
+  <%= yield %>
+</div>
 </body>
 </html>
