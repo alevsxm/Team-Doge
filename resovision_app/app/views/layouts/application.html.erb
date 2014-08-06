@@ -24,12 +24,24 @@
   </script>
 </head>
 <body>
-  <script type="IN/Login" data-onAuth="onLinkedInAuth">
-  Hello, <?js= firstName ?>!
-  </script>
-  <script type="text/javascript">
-    IN.User.logout(callbackFunction, callbackScope)
-  </script>
+<% if current_user %>
+<header>
+  <nav>
+    <ul>
+      <li>Welcome, <%= current_user.resovision.first_name %></li>
+      <li><%= link_to 'Log Out', root_path %></li>
+      <li><%= link_to 'Home', user_path(current_user) %></li>
+    </ul>
+  </nav>
+</header>
+<% end %>
+
+<script type="IN/Login" data-onAuth="onLinkedInAuth">
+Hello, <?js= firstName ?>!
+</script>
+<script type="text/javascript">
+  IN.User.logout(callbackFunction, callbackScope)
+</script>
 
 <%= yield %>
 

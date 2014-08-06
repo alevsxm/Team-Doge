@@ -35,8 +35,17 @@ class WelcomeController < ApplicationController
             #set response.body to Hash variable
             response_hash = JSON.parse(response.body)
 
-            # creates all objects assoc with user and returns user
-            current_user = Linkedin.create_all(response_hash)
+            if User.find_by(linkedin_member_id: response_hash["id"]).nil?
+              # creates all objects assoc with user and returns user
+              current_user = Linkedin.create_all(response_hash)
+              session[:current_user] = User.find_by(linkedin_member_id: response_hash["id"])
+            else
+              # creates a session using the user's linkedin memberID
+              session[:current_user] = User.find_by(linkedin_member_id: response_hash["id"])
+              current_user = User.find_by(linkedin_member_id: response_hash["id"])
+              binding.pry
+            end
+
 
             # Handle HTTP responses
             case response
