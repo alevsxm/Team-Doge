@@ -49,6 +49,27 @@ $(document).ready(function() {
   //     recorder.css('visibility', 'visible');
   // });
 
+  console.log("JS for Resovisions");
+  $('body').on('click', '.resovision-info', editInfo );
+  $('body').on('keypress', '.edit-description', function(event){
+      var editInput = $(this);
+      if (event.which === 13) {
+        updateInfo.call(this);
+      }
+    });
+
+  $('.show-ziglet').on('click', function(){
+    var player = $(this).parent().find('.player');
+    console.log(player);
+    player.css('visibility', 'visible');
+  });
+  $('.record-ziglet').on('click', function(){
+    var recorder = $(this).parent().find('.recorder');
+    console.log(recorder);
+
+      recorder.css('visibility', 'visible');
+  });
+>>>>>>> 4f270304b96d561b11b1b2b45c0c7c47a631c422
 });
 
 function editInfo() {

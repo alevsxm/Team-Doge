@@ -1,37 +1,34 @@
 class Linkedin < ActiveRecord::Base
 
-  def self.get_info(user_id)
+  API_KEY = ENV['LINKEDIN_API_KEY'] #Your app's API key
+  API_SECRET = ENV['LINKEDIN_SECRET_KEY'] #Your app's API secret
+  REDIRECT_URI = 'http://localhost:3000/accept' #Redirect users after authentication to this path, ensure that you have set up your routes to handle the callbacks
+  STATE = SecureRandom.hex(15) #A unique long string that is not easy to guess
 
-  api_key = ENV['LINKEDIN_API_KEY']
-  api_secret = ENV['LINKEDIN_SECRET_KEY']
+  #Instantiate your OAuth2 client object
+  def self.client
+    OAuth2::Client.new(
+       API_KEY,
+       API_SECRET,
+       :authorize_url => "/uas/oauth2/authorization?response_type=code", #LinkedIn's authorization path
+       :token_url => "/uas/oauth2/accessToken", #LinkedIn's access token path
+       :site => "https://www.linkedin.com"
+     )
+  end
 
-  configuration = { :site => 'https://api.linkedin.com',
-                            :authorize_path => '/uas/oauth/authenticate',
-                            :request_token_path => '/uas/oauth/requestToken',
-                            :access_token_path => '/uas/oauth/accessToken' }
+  # def self.authorize
+  #   #Redirect your user in order to authenticate
+  # end
 
-  consumer = OAuth::Consumer.new(api_key, api_secret, configuration)
-
-  request_token = consumer.get_request_token
-
-  puts "Please visit this URL: " + request_token.authorize_url + " in your browser and then input the numerical code you are provided here: "
-
-  # Set verifier code
-  verifier = $stdin.gets.strip
-
-  # Pass in verifier code in order to upgrade for access token
-  @access_token = request_token.get_access_token(:oauth_verifier => verifier)
-
-  fields = ['first-name', 'last-name', 'headline', 'location', 'industry',
-            'positions', 'educations', 'skills', 'picture-url'].join(',')
-
-  # API call to retrieve profile using access token
-  # Currently making call based on user id
-  # If you want to make call based on current login use ~ in place of id=#{user_id}
-  response = @access_token.get("http://api.linkedin.com/v1/people/id=#{user_id}:(#{fields})?format=json")
-
-  response_hash = JSON.parse(response.body)
-
+  def self.create_all(response_hash)
+    user = User.create_user(response_hash)
+    resovision = Resovision.create_resovision(response_hash)
+    positions = Position.create_positions(response_hash)
+    educations = Education.create_educations(response_hash)
+    resovision.positions.push(positions)
+    resovision.educations.push(educations)
+    user.resovision = resovision
+    user
   end
 
 end
