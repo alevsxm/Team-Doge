@@ -1,5 +1,4 @@
-require 'pry-rails'
-require 'linkedin'
+
 class ResovisionsController < ApplicationController
 
 	before_action :authenticate, only: [:new, :create]
@@ -23,26 +22,24 @@ class ResovisionsController < ApplicationController
 
 	def show
 		@resovision = Resovision.find(params[:id])
-		@educations = Education.where(resovision_id: params[:id])
 		@positions =  Position.where(resovision_id: params[:id])
+		@educations = Education.where(resovision_id: params[:id])
 		# @videos= Videos.where(resovision_id: params[:id])
 	end
 
 	def edit
 		@resovision = Resovision.find(params[:id])
-		@educations = Education.where(resovision_id: params[:id])
 		@positions =  Position.where(resovision_id: params[:id])
+		@educations = Education.where(resovision_id: params[:id])
 		# @videos= Videos.where(resovision_id: params[:id])
 	end
 
 	def update
 		@resovision = Resovision.find(params[:id])
-		@educations = Education.where(resovision_id: params[:id])
-		@positions =  Position.where(resovision_id: params[:id])
 		# @videos= Videos.where(resovision_id: params[:id])
 
 		if @resovision.update(resovision_params)
-      redirect_to(resovision_path(@resovision))
+			render json: @resovision
     else
       redirect_to edit_resovision_path(@resovision)
     end

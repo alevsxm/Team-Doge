@@ -50,5 +50,4 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'oauth'
-
-gem 'linkedin'
+gem 'oauth2'

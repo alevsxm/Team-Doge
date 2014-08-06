@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:linkedin_email, :linkedin_pw)
+    params.require(:user).permit(:linkedin_member_id)
   end
 
 end
