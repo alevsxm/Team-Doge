@@ -40,6 +40,8 @@ group :development do
   gem 'shoulda-matchers', require: false
 end
 
+gem 'capybara'
+gem 'cucumber-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
