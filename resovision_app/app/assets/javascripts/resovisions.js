@@ -69,7 +69,8 @@ $(document).ready(function() {
 
       recorder.css('visibility', 'visible');
   });
->>>>>>> 4f270304b96d561b11b1b2b45c0c7c47a631c422
+
+
 });
 
 function editInfo() {
