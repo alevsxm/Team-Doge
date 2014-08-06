@@ -52,9 +52,4 @@ class WelcomeController < ApplicationController
   def home
   end
 
-  # private
-  # def user_params
-  #   params.require(:user).permit(:linkedin_member_id)
-  # end
-
 end
