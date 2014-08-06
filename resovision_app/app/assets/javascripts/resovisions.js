@@ -4,7 +4,6 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function() {
-  console.log("JS for Resovisions");
 
   $('body').on('click', '.resovision-info', editInfo );
 
@@ -16,18 +15,40 @@ $(document).ready(function() {
     });
 
   $('.show-ziglet').on('click', function(){
-    var player = $(this).parent().find('.player');
-    console.log(player);
-
-      player.css('visibility', 'visible');
+    var zigletDiv = $(this).parent();
+    var buttonID = (this.id);
+    var videoKey = buttonID.replace(/ /g,'');
+    var showVideoButton = $(this) 
+    showVideoButton.hide();
+    var showPlayer= '<button id="close-player">Close Player<ziggeo ziggeo-video=\'_' + videoKey + '\' ziggeo-width=550 ziggeo-height=450></ziggeo></button>';
+    $(showPlayer).appendTo(zigletDiv);
+    $('#close-player').on('click', function() {
+      var closeButton = $(this);   
+      console.log(closeButton);
+      $(this).remove(); 
+      showVideoButton.show();
+    }); 
   });
-  $('.record-ziglet').on('click', function(){
-    var recorder = $(this).parent().find('.recorder');
-    console.log(recorder);
 
-      recorder.css('visibility', 'visible');
-  }); 
-    
+  
+
+  $('.record-ziglet').on('click', function(){
+    var zigletDiv = $(this).parent();
+    var buttonID = (this.id);
+    var videoKey = buttonID.replace(/ /g,'');
+    var recordVideoButton = $(this) 
+    recordVideoButton.hide(); 
+    var newRecorder = '<button id="close-recorder">Close Recorder<ziggeo id="ziglet-recorder" ziggeo-width=420 ziggeo-height=340 ziggeo-key=\'' + videoKey + '\' ziggeo-limit=120></ziggeo></button>'; 
+    $(newRecorder).appendTo(zigletDiv);
+    $('#close-recorder').on('click', function() {
+      var closeButton = $(this);   
+      console.log(closeButton);
+      $(this).remove(); 
+      recordVideoButton.show();
+    }); 
+  });
+
+  
 });
 
 function editInfo() {
