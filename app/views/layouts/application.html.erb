@@ -10,19 +10,6 @@
   <script src="//assets.ziggeo.com/js/ziggeo-json2-betajs-player.min.js"></script>
   <script>ZiggeoApi.token = "1a96227f1aca8f46d85f7a270b8e8266";</script>
 
-  <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-    api_key: 75yxb7noe10oi2
-    authorize: true
-  </script>
-  <script type="text/javascript">
-    function onLinkedInAuth() {
-      IN.API.Profile("me")
-        .result( function(me) {
-          var id = me.values[0].id;
-          // AJAX call to pass back id to your server
-        });
-    }
-  </script>
 </head>
 <body>
 <% if current_user %>
@@ -30,19 +17,12 @@
   <nav>
     <ul>
       <li>Welcome, <%= current_user.resovision.first_name %></li>
-      <li><%= link_to 'Log Out', root_path %></li>
+      <li><%= link_to 'Log Out', logout_path %></li>
       <li><%= link_to 'Home', user_path(current_user) %></li>
     </ul>
   </nav>
 </header>
 <% end %>
-
-<script type="IN/Login" data-onAuth="onLinkedInAuth">
-Hello, <?js= firstName ?>!
-</script>
-<script type="text/javascript">
-  IN.User.logout(callbackFunction, callbackScope)
-</script>
 
 <%= yield %>
 

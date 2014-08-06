@@ -1,4 +1,4 @@
-class Linkedin < ActiveRecord::Base
+class Linkedin
 
   API_KEY = ENV['LINKEDIN_API_KEY'] #Your app's API key
   API_SECRET = ENV['LINKEDIN_SECRET_KEY'] #Your app's API secret
@@ -8,17 +8,17 @@ class Linkedin < ActiveRecord::Base
   #Instantiate your OAuth2 client object
   def self.client
     OAuth2::Client.new(
-       API_KEY,
-       API_SECRET,
-       :authorize_url => "/uas/oauth2/authorization?response_type=code", #LinkedIn's authorization path
-       :token_url => "/uas/oauth2/accessToken", #LinkedIn's access token path
-       :site => "resovisions.herokuapp.com"
-     )
+      API_KEY,
+      API_SECRET,
+      :authorize_url => "/uas/oauth2/authorization?response_type=code", #LinkedIn's authorization path
+      :token_url => "/uas/oauth2/accessToken", #LinkedIn's access token path
+      :site => "https://www.linkedin.com"
+    )
   end
 
 
   # def self.authorize
-  #   #Redirect your user in order to authenticate
+  #  #Redirect your user in order to authenticate
   # end
 
   def self.create_all(response_hash)
