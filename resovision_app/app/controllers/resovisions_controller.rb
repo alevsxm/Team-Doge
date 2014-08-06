@@ -36,8 +36,6 @@ class ResovisionsController < ApplicationController
 
 	def update
 		@resovision = Resovision.find(params[:id])
-		@positions =  Position.where(resovision_id: params[:id])
-		@educations = Education.where(resovision_id: params[:id])
 		# @videos= Videos.where(resovision_id: params[:id])
 
 		if @resovision.update(resovision_params)
