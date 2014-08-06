@@ -43,6 +43,8 @@ group :development do
   gem 'cucumber-rails'
 end
 
+gem 'capybara'
+gem 'cucumber-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
