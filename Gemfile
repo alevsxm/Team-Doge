@@ -38,6 +38,9 @@ group :development do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers', require: false
+  gem 'capybara_minitest_spec'
+  gem 'capybara'
+  gem 'cucumber-rails'
 end
 
 # Use unicorn as the app server
