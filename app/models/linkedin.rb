@@ -1,4 +1,4 @@
-class Linkedin < ActiveRecord::Base
+class Linkedin
 
   API_KEY = ENV['LINKEDIN_API_KEY'] #Your app's API key
   API_SECRET = ENV['LINKEDIN_SECRET_KEY'] #Your app's API secret
