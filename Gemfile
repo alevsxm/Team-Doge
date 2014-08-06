@@ -38,13 +38,11 @@ group :development do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers', require: false
-  gem 'capybara_minitest_spec'
-  gem 'capybara'
-  gem 'cucumber-rails'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
 
-gem 'capybara'
-gem 'cucumber-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
