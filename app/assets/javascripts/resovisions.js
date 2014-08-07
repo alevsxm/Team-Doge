@@ -14,6 +14,7 @@ $(document).ready(function () {
     $('button.show-ziglet').show();
     showVideoButton.hide();
     var showPlayer= '<div class="player"><ziggeo ziggeo-video=\'_' + videoKey + '\' ziggeo-width=550 ziggeo-height=450></ziggeo><button id="close-player">Close Player</button></div>';
+    console.log(couldNotLoadError); 
     $(showPlayer).appendTo(zigletDiv);
     $('#close-player').on('click', function() {
       var playerDiv = $(this).parent();
@@ -24,31 +25,34 @@ $(document).ready(function () {
   });
 
   $('.record-ziglet').on('click', function(){
+    
     var zigletDiv = $(this).parent();
     var buttonID = (this.id);
     var videoKey = buttonID.replace(/ /g,''); 
-    var recordVideoButton = $(this); 
-     $('div.recorder').remove();
-     $('button.record-ziglet').show();
-    recordVideoButton.hide(); 
-    try {
-      var oldVideo = ZiggeoApi.Videos.get('_'+ videoKey);
-      var oldVideoToken = oldVideo.token; 
-      var oldVideoTokenLength = oldVideoToken.length; 
-      var newRecorder = '<div class="recorder"><div id="replace-me"</div><button id="close-player">Close Player</button></div>';
-      ZiggeoApi.Embed.embed("#replace-me", {video: oldVideoToken};
+    var oldVideoKey = '_' + videoKey
+    var pressedRecordVideoButton = $(this); 
+
+    $('div.recorder').remove();
+    $('button.record-ziglet').show();
+
+    pressedRecordVideoButton.hide(); 
+   
+      
+      var newRecorder = '<div class="recorder"><ziggeo id="ziglet-recorder" ziggeo-width=420 ziggeo-height=340 ziggeo-key=\'' + videoKey + '\' ziggeo-limit=120></ziggeo><button id="close-recorder">Close Recorder</button></div>';
+      
       $(newRecorder).appendTo(zigletDiv);
 
-    } catch (e) {
-      var newRecorder = '<div class="recorder"><ziggeo id="ziglet-recorder" ziggeo-width=420 ziggeo-height=340 ziggeo-key=\'' + videoKey + '\' ziggeo-limit=120></ziggeo><button id="close-recorder">Close Recorder</button></div>';
-      $(newRecorder).appendTo(zigletDiv);
-    }    
-    $('#close-recorder').on('click', function() {
-      var recorderDiv = $(this).parent();
-      recorderDiv.remove();
-      recordVideoButton.show();
+      $('#close-recorder').on('click', function() {
+        var recorderDiv = $(this).parent();
+        recorderDiv.remove();
+        pressedRecordVideoButton.show();
+   
     });
   });
+
+  var deleteVideo = function() {
+
+  }
 
   // Resovision:
   $('body').on('click', '.resovision-info', editInfo );
