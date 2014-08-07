@@ -1,67 +1,49 @@
 <div class="resovision-div">
 
-  <div class="resovision-info-ro" data-id="<%= @resovision.id %>" >
-    <img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
-    <li class="resovision-element" id="first_name"><%= @resovision.first_name %></li>
-    <li class="resovision-element" id="last_name"><%= @resovision.last_name %></li>
-    <p>Location:</p>
-    <li class="resovision-element" id="location"><%= @resovision.location %></li>
-    <p>Industry:</p>
-    <li class="resovision-element" id="industry"><%= @resovision.industry %></li>
-    <p>Headline:</p>
-    <li class="resovision-element" id="headline"><%= @resovision.headline %></li>
-    <p>Summary:</p>
-    <li class="resovision-element" id="summary"><%= @resovision.summary %></li>
-    <div class= 'ziglets'>
-      <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video.</button>
-    </div>
-  </div><br>
+<img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
+<div class="name">
+  <h4 class="name"><%= @resovision.first_name %> <%= @resovision.last_name %></h4>
+<div class="profile-heading"
+  <li class="location"><%= @resovision.location %></li>
+  <li class="industry"><%= @resovision.industry %></li>
+  <li class="headline"><%= @resovision.headline %></li>
+  <li class="summary"><%= @resovision.summary %></li>
+  <div class= 'ziglets'>
+    <button class='show-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Meet <%= @resovision.first_name %> </button>
+  </div>
+</div>
 
-  <% if @resovision.num_positions > 0 %>
-    <div class="all-positions"> Positions:
-      <% @resovision.positions.sort.each do |position| %>
-        <div class="position-ro" data-id="<%= position.id %>">
-          <p>Company:</p>
-          <li class="position-element" id="company_name"><%= position.company_name %></li>
-          <p>Title:</p>
-          <li class="position-element" id="title"><%= position.title %></li>
-          <p>Summary:</p>
-          <li class="position-element" id="summary"><%= position.summary %></li>
-          <p>Currently working here?</p>
-          <li class="position-element" id="is_current"><%= position.is_current %></li>
-          <p>Start month:</p>
-          <li class="position-element" id="start_month"><%= position.start_month %></li>
-          <p>Start year:</p>
-          <li class="position-element" id="start_year"><%= position.start_year %></li>
-          <p>End month:</p>
-          <li class="position-element" id="end_month"><%= position.end_month %></li>
-          <p>End year:</p>
-          <li class="position-element" id="end_year"><%= position.end_year %></li>
-            <div class= 'ziglets'>
-              <button class='record-ziglet' id='<%= position.company_name %><%= @resovision.last_name%>'>Record a video</button>
-            </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+<hr> 
+<% if @resovision.num_positions > 0 %>
+  <div class="positions"> Positions:
+    <hr> 
+    <% @resovision.positions.each do |position| %>
+        <p class="position">
+          <h6 class="company"><%= position.company_name %></h6>
+          <h6 class="title"><%= position.title %></h6>
+          <ul class="summary"><%= position.summary %></ul>
+          <ul class="is-current">Currently working here? <%= position.is_current %></ul>
+          <ul class="dates"> <%= position.start_month %>/<%= position.start_year %> - <%= position.end_month %>/<%= position.end_year %></ul>
+          <div class= 'ziglets'>
+            <button class='show-ziglet'id='<%= position.company_name %><%= @resovision.last_name%>'>Tell me more about this position <%= @resovision.first_name %></button>
+          </div>
+        </p>
+        <hr>
+    <% end %>
+  </div>
+<% end %>
 
-  <% if @resovision.num_educations > 0 %>
-    <div class="all-educations"> Education:
-      <% @resovision.educations.sort.each do |education| %>
-          <div class="education-ro" data-id="<%= education.id %>">
-            <p>School name:</p>
-            <li class="education-element" id="school_name"><%= education.school_name %></li>
-            <p>Degree:</p>
-            <li class="education-element" id="degree"><%= education.degree %></li>
-            <p>Field of study: </p>
-            <li class="education-element" id="field_of_study"><%= education.field_of_study %></li>
-            <p>Start year:</p>
-            <li class="education-element" id="start_year"><%= education.start_year %></li>
-            <p>End year:</p>
-            <li class="education-element" id="end_year"><%= education.end_year %></li>
-            <div class= 'ziglets'>
-              <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video.</button>
-            </div>
+<% if @resovision.num_educations > 0 %>
+  <div class="educations"> Education:
+    <hr> 
+    <% @resovision.educations.each do |education| %>
+        <p class="education">
+          <h6 class="school-name"><%= education.school_name %></h6>
+          <h6 class="degree"><%= education.degree %></h6>
+          <ul class="field-of-study">Field of study: <%= education.field_of_study %></ul>
+          <ul class="start-year"><%= education.start_year %> - <%= education.end_year %></ul>
+          <div class= 'ziglets'>
+            <button class='show-ziglet'id='<%= education.school_name %><%= @resovision.last_name%>'>Tell me more about this school <%= @resovision.first_name %></button>
           </div>
       <% end %>
     </div>

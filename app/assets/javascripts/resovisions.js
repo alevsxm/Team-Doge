@@ -1,7 +1,6 @@
 // # Place all the behaviors and hooks related to the matching controller here.
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
-
 $(document).on('page:load', function() {
   console.log("Oh, Hai.");
 
@@ -32,8 +31,6 @@ $(document).on('page:load', function() {
     }
   });
 
-
-  // Ziggeo Player:  
   $('.show-ziglet').on('click', function(){
     var zigletDiv = $(this).parent();
     var buttonID = (this.id);
@@ -57,10 +54,20 @@ $(document).on('page:load', function() {
     var zigletDiv = $(this).parent();
     var buttonID = (this.id);
     var videoKey = buttonID.replace(/ /g,'');
+    var oldVideokey = '_' + videoKey; 
     var recordVideoButton = $(this);
      $('div.recorder').remove();
      $('button.record-ziglet').show();
     recordVideoButton.hide();
+    ZiggeoApi.Videos.destroy(oldVideokey, {
+      success: function(args, results){
+        // if video deleted this code runs
+      },
+      failure: function(args, error){
+        // if error on video deletion this code runs
+      }
+    });
+
     var newRecorder = '<div class="recorder"><ziggeo id="ziglet-recorder" ziggeo-width=420 ziggeo-height=340 ziggeo-key=\'' + videoKey + '\' ziggeo-limit=120></ziggeo><button id="close-recorder">Close Recorder</button></div>';
     $(newRecorder).appendTo(zigletDiv);
     $('#close-recorder').on('click', function() {
@@ -87,6 +94,52 @@ $(document).on('page:load', function() {
         resovisionElementArray.eq(i).replaceWith(editSpan);
       }
     }
+
+  // Resovision:
+  $('body').on('click', '.resovision-info', editInfo );
+  $('body').on('keypress', '.edit-description', function(event){
+    var editInput = $(this);
+    if (event.which === 13) {
+      updateInfo.call(this);
+    }
+  });
+
+  // Positions:
+  $('body').on('click', '.position', editPosition );
+  $('body').on('keypress', '.edit-pos-description', function(event){
+    var editInput = $(this);
+    if (event.which === 13) {
+      updatePosition.call(this);
+    }
+  });
+
+  // Educations:
+  $('body').on('click', '.education', editEducation );
+  $('body').on('keypress', '.edit-edu-description', function(event){
+    var editInput = $(this);
+    if (event.which === 13) {
+      updateEducation.call(this);
+    }
+  });
+
+
+});
+
+function editInfo() {
+  var resovisionInfoDiv = $(this);
+  var resovisionElementArray = resovisionInfoDiv.children();
+
+  for (var i = 0; i < resovisionElementArray.length; i++) {
+    if (resovisionElementArray.eq(i).hasClass('resovision-element')) {
+      var editID = resovisionElementArray.eq(i).attr('id');
+      var editSpan = $('<span class="edit" id="' + editID + '">');
+      var editInput = $('<input type="text" class="edit-description">');
+      var text = resovisionElementArray.eq(i).text();
+
+      editSpan.append(editInput);
+      editInput.val(text);
+      resovisionElementArray.eq(i).replaceWith(editSpan);
+    }
   }
 
   function updateInfo() {

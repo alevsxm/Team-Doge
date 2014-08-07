@@ -12,9 +12,8 @@
     <li class="resovision-element" id="headline"><%= @resovision.headline %></li>
     <p>Summary:</p>
     <li class="resovision-element" id="summary"><%= @resovision.summary %></li>
-    
     <div class= 'ziglets'>
-      <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video.</button>
+      <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video introducing yourself.</button>
     </div>
   </div><br>
 
@@ -40,11 +39,9 @@
           <li class="position-element" id="end_month"><%= position.end_month %></li>
           <p>End year:</p>
           <li class="position-element" id="end_year"><%= position.end_year %></li>
-
           <div class= 'ziglets'>
-            <button class='record-ziglet' id='<%= position.company_name %><%= @resovision.last_name%>'>Record a video</button>
-          </div><br>
-
+            <button class='record-ziglet' id='<%= position.company_name %><%= @resovision.last_name%>'>Record a video about your time at <%= position.company_name %> </button>
+          </div>
         </div>
       <% end %>
     </div>
@@ -65,10 +62,9 @@
             <li class="education-element" id="start_year"><%= education.start_year %></li>
             <p>End year:</p>
             <li class="education-element" id="end_year"><%= education.end_year %></li>
-
             <div class= 'ziglets'>
-              <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video.</button>
-            </div><br>
+              <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video about your time at <%= education.school_name %>.</button>
+            </div>
           </div>
       <% end %>
     </div>
