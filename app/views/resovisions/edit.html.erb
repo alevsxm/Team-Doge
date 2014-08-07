@@ -13,9 +13,9 @@
     <li class="resovision-element" id="summary"><%= @resovision.summary %></li>
   </div><br>
 
-<div class= 'ziglets'>
-  <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video.</button>
-</div><br>
+  <div class= 'ziglets'>
+    <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video.</button>
+  </div><br><hr>
 
   <% if @resovision.num_positions > 0 %>
     <div class="all-positions"> Positions:
@@ -39,8 +39,8 @@
           <li class="position-element" id="end_year"><%= position.end_year %></li>
           <div class= 'ziglets'>
             <button class='record-ziglet' id='<%= position.company_name %><%= @resovision.last_name%>'>Record a video</button>
-          </div><br>
-        </div>
+          </div>
+        </div><hr>
       <% end %>
     </div>
   <% end %>
@@ -62,9 +62,9 @@
             <div class= 'ziglets'>
               <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video.</button>
             </div><br>
-          </div>
+          </div><hr>
       <% end %>
     </div>
-  <% end %>
+  <% end %><hr>
 
 </div>
