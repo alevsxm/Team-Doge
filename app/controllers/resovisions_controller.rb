@@ -1,4 +1,3 @@
-
 class ResovisionsController < ApplicationController
 
 	before_action :authenticate
@@ -30,9 +29,7 @@ class ResovisionsController < ApplicationController
 		@resovision = Resovision.find(params[:id])
 		@positions =  Position.where(resovision_id: params[:id])
 		@educations = Education.where(resovision_id: params[:id])
-		authorize! :update, Resovision
-		authorize! :update, Position
-		authorize! :update, Education
+		authorize! :update, @resovision
 	end
 
 	def update
