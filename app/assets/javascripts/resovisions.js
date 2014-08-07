@@ -4,36 +4,7 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function() {
-  console.log("Oh, Hai.");
-
-  // Resovision:
-  $('body').on('click', '.resovision-info', editInfo );
-  $('body').on('keypress', '.edit-description', function(event){
-    var editInput = $(this);
-    if (event.which === 13) {
-      updateInfo.call(this);
-    }
-  });
-
-  // Positions:
-  $('body').on('click', '.position', editPosition );
-  $('body').on('keypress', '.edit-pos-description', function(event){
-    var editInput = $(this);
-    if (event.which === 13) {
-      updatePosition.call(this);
-    }
-  });
-
-  // Educations:
-  $('body').on('click', '.education', editEducation );
-  $('body').on('keypress', '.edit-edu-description', function(event){
-    var editInput = $(this);
-    if (event.which === 13) {
-      updateEducation.call(this);
-    }
-  });
-
-  $('.show-ziglet').on('click', function(){
+    $('.show-ziglet').on('click', function(){
     var zigletDiv = $(this).parent();
     var buttonID = (this.id);
     var videoKey = buttonID.replace(/ /g,'');
@@ -68,6 +39,35 @@ $(document).ready(function() {
       recordVideoButton.show();
     });
   });
+
+  // Resovision:
+  $('body').on('click', '.resovision-info', editInfo );
+  $('body').on('keypress', '.edit-description', function(event){
+    var editInput = $(this);
+    if (event.which === 13) {
+      updateInfo.call(this);
+    }
+  });
+
+  // Positions:
+  $('body').on('click', '.position', editPosition );
+  $('body').on('keypress', '.edit-pos-description', function(event){
+    var editInput = $(this);
+    if (event.which === 13) {
+      updatePosition.call(this);
+    }
+  });
+
+  // Educations:
+  $('body').on('click', '.education', editEducation );
+  $('body').on('keypress', '.edit-edu-description', function(event){
+    var editInput = $(this);
+    if (event.which === 13) {
+      updateEducation.call(this);
+    }
+  });
+
+
 });
 
 function editInfo() {

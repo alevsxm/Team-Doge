@@ -1,6 +1,4 @@
-<div class= 'ziglets'>
-  <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video.</button>
-</div>
+
 <div class="resovision-div">
 
   <div class="resovision-info" data-id="<%= @resovision.id %>" >
@@ -15,15 +13,17 @@
     <li class="resovision-element" id="headline"><%= @resovision.headline %></li>
     <p>Summary:</p>
     <li class="resovision-element" id="summary"><%= @resovision.summary %></li>
+    
+    <div class= 'ziglets'>
+      <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video.</button>
+    </div>
   </div><br>
 
   <% if @resovision.num_positions > 0 %>
     <div class="all-positions"> Positions:
       <% @resovision.positions.each do |position| %>
         <div class="position">
-          <div class= 'ziglets'>
-            <button class='record-ziglet' id='<%= position.company_name %><%= @resovision.last_name%>'>Record a video</button>
-          </div>
+
           <p>Company:</p>
           <li class="position-element" id="company_name"><%= position.company_name %>
           <p>Title:</p>
@@ -40,6 +40,10 @@
           <li class="position-element" id="end_month"><%= position.end_month %></li>
           <p>End year:</p>
           <li class="position-element" id="end_year"><%= position.end_year %></li>
+
+          <div class= 'ziglets'>
+            <button class='record-ziglet' id='<%= position.company_name %><%= @resovision.last_name%>'>Record a video</button>
+          </div>
         </div>
       <% end %>
     </div>
@@ -49,10 +53,6 @@
     <div class="all-educations"> Education:
       <% @resovision.educations.each do |education| %>
           <div class="education">
-            <div class= 'ziglets'>
-              <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video.</button>
-            </div>
-
             <p>School name:</p>
             <li class="education-element" id="school_name"><%= education.school_name %></li>
             <p>Degree:</p>
@@ -63,6 +63,10 @@
             <li class="education-element" id="start_year"><%= education.start_year %></li>
             <p>End year:</p>
             <li class="education-element" id="end_year"><%= education.end_year %></li>
+
+            <div class= 'ziglets'>
+              <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video.</button>
+            </div>
           </div>
       <% end %>
     </div>

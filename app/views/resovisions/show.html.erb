@@ -1,6 +1,4 @@
-<div class= 'ziglets'>
-  <button class='show-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Ask <%= @resovision.first_name %> about it.</button>
-</div>
+
 <img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
 <div class="name">
   <h4 class="name"><%= @resovision.first_name %> <%= @resovision.last_name %></h4>
@@ -9,6 +7,9 @@
   <li class="industry"><%= @resovision.industry %></li>
   <li class="headline"><%= @resovision.headline %></li>
   <li class="summary"><%= @resovision.summary %></li>
+  <div class= 'ziglets'>
+    <button class='show-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Ask <%= @resovision.first_name %> about it.</button>
+  </div>
 </div>
 
 <hr> 
@@ -17,14 +18,14 @@
     <hr> 
     <% @resovision.positions.each do |position| %>
         <p class="position">
-          <div class= 'ziglets'>
-            <button class='show-ziglet'id='<%= position.company_name %><%= @resovision.last_name%>'>Ask <%= @resovision.first_name %> about it.</button>
-          </div>
           <h6 class="company"><%= position.company_name %></h6>
           <h6 class="title"><%= position.title %></h6>
           <ul class="summary"><%= position.summary %></ul>
           <ul class="is-current">Currently working here? <%= position.is_current %></ul>
           <ul class="dates"> <%= position.start_month %>/<%= position.start_year %> - <%= position.end_month %>/<%= position.end_year %></ul>
+          <div class= 'ziglets'>
+            <button class='show-ziglet'id='<%= position.company_name %><%= @resovision.last_name%>'>Ask <%= @resovision.first_name %> about it.</button>
+          </div>
         </p>
         <hr>
     <% end %>
@@ -36,13 +37,13 @@
     <hr> 
     <% @resovision.educations.each do |education| %>
         <p class="education">
-          <div class= 'ziglets'>
-            <button class='show-ziglet'id='<%= education.school_name %><%= @resovision.last_name%>'>Ask <%= @resovision.first_name %> about it.</button>
-          </div>
           <h6 class="school-name"><%= education.school_name %></h6>
           <h6 class="degree"><%= education.degree %></h6>
           <ul class="field-of-study">Field of study: <%= education.field_of_study %></ul>
           <ul class="start-year"><%= education.start_year %> - <%= education.end_year %></ul>
+          <div class= 'ziglets'>
+            <button class='show-ziglet'id='<%= education.school_name %><%= @resovision.last_name%>'>Ask <%= @resovision.first_name %> about it.</button>
+          </div>
         </p>
         <hr>
     <% end %>
