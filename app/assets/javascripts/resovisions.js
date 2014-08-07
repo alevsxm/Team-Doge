@@ -2,13 +2,42 @@
 // # Place all the behaviors and hooks related to the matching controller here.
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on('page:load', function() {
+  console.log("Oh, Hai.");
 
-$(document).ready(function() {
-    $('.show-ziglet').on('click', function(){
+  // Resovision:
+  $('body').on('click', '.resovision-info', editInfo );
+  $('body').on('keypress', '.edit-description', function(event){
+    var editInput = $(this);
+    if (event.which === 13) {
+      updateInfo.call(this);
+    }
+  });
+
+  // Positions:
+  $('body').on('click', '.position', editPosition );
+  $('body').on('keypress', '.edit-pos-description', function(event){
+    var editInput = $(this);
+    if (event.which === 13) {
+      updatePosition.call(this);
+    }
+  });
+
+  // Educations:
+  $('body').on('click', '.education', editEducation );
+  $('body').on('keypress', '.edit-edu-description', function(event){
+    var editInput = $(this);
+    if (event.which === 13) {
+      updateEducation.call(this);
+    }
+  });
+  
+  // Ziggeo Player:  
+  $('.show-ziglet').on('click', function(){
     var zigletDiv = $(this).parent();
     var buttonID = (this.id);
     var videoKey = buttonID.replace(/ /g,'');
-    var showVideoButton = $(this)
+    var showVideoButton = $(this);
     $('div.player').remove();
     $('button.show-ziglet').show();
     showVideoButton.hide();
@@ -22,11 +51,12 @@ $(document).ready(function() {
     });
   });
 
+  // Ziggeo Recorder:
   $('.record-ziglet').on('click', function(){
     var zigletDiv = $(this).parent();
     var buttonID = (this.id);
     var videoKey = buttonID.replace(/ /g,'');
-    var recordVideoButton = $(this)
+    var recordVideoButton = $(this);
      $('div.recorder').remove();
      $('button.record-ziglet').show();
     recordVideoButton.hide();
@@ -138,35 +168,32 @@ function editPosition() {
 function updatePosition() {
   var editInput = $(this);
   var editSpan = editInput.parent();
-  var positionID = editInput.parent().parent().attr('id');
+  var positionID = editInput.parent().parent().data('id');
   var editSpanArray = editSpan.parent().children();
 
-  var newCompanyName = editSpan.parent().find('#company').children().val();
+  var newCompanyName = editSpan.parent().find('#company_name').children().val();
   var newTitle = editSpan.parent().find('#title').children().val();
   var newSummary = editSpan.parent().find('#summary').children().val();
-  var newStartMonth = editSpan.parent().find('#start-month').children().val();
-  var newStartYear = editSpan.parent().find('#start-year').children().val();
-  var newEndMonth = editSpan.parent().find('#end-month').children().val();
-  var newEndYear = editSpan.parent().find('#end-year').children().val();
+  var newStartMonth = editSpan.parent().find('#start_month').children().val();
+  var newStartYear = editSpan.parent().find('#start_year').children().val();
+  var newEndMonth = editSpan.parent().find('#end_month').children().val();
+  var newEndYear = editSpan.parent().find('#end_year').children().val();
 
   var params = { position: { company_name: newCompanyName, title: newTitle,
                                summary: newSummary, start_month: newStartMonth,
                                start_year: newStartYear, end_month: newEndMonth,
                                end_year: newEndYear }};
 
-  console.log('updating position: ' + positionID);
+
   $.ajax('/positions/' + positionID, { type: "PUT", data: params })
     .done(function(data) {
-      console.log('position ' + positionID + ' updated.');
       for (var i = 0; i < editSpanArray.length; i++) {
         if (editSpanArray.eq(i).hasClass('edit')) {
           var inputID = editSpanArray.eq(i).attr('id');
-          // console.log(inputID);
           var newDiv = $('<li class="position-element" id="'+ inputID +'">');
           // console.log(newDiv);
           editSpanArray.eq(i).replaceWith(newDiv);
           newDiv.text(data[inputID]);
-
         }
       }
     });
@@ -189,11 +216,9 @@ function editEducation() {
 }
 
 function updateEducation() {
-console.log("Update started");
-
   var editInput = $(this);
   var editSpan = editInput.parent();
-  var educationID = editInput.parent().parent().attr('id');
+  var educationID = editInput.parent().parent().data('id');
   var editSpanArray = editSpan.parent().children();
 
   var newSchoolName = editSpan.parent().find('#school_name').children().val();
@@ -207,10 +232,8 @@ console.log("Update started");
                             start_year: newStartYear, end_year: newEndYear
   }};
 
-console.log('Updating education: ' + educationID);
   $.ajax('/educations/' + educationID, { type: "PUT", data: params })
     .done(function(data) {
-console.log('Update in progress for: education ' + educationID);
       for (var i = 0; i < editSpanArray.length; i++) {
         if (editSpanArray.eq(i).hasClass('edit')) {
           var inputID = editSpanArray.eq(i).attr('id');
@@ -220,7 +243,6 @@ console.log('Update in progress for: education ' + educationID);
         }
       }
     });
-console.log("Update completed");
 }
 
 
