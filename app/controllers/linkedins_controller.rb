@@ -1,4 +1,4 @@
-class WelcomeController < ApplicationController
+class LinkedinsController < ApplicationController
 
   def index
     redirect_to Linkedin.client.auth_code.authorize_url(:scope => 'r_fullprofile r_basicprofile',
@@ -53,7 +53,7 @@ class WelcomeController < ApplicationController
                 # Handle 403 Forbidden response
             end
         end
-        redirect_to user_path(current_user)
+        redirect_to resovision_path(current_user.resovision)
   end
 
   def home

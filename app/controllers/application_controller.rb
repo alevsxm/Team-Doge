@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless current_user && current_user.id == params[:id].to_i
-      redirect_to users_path
+      redirect_to users_path(@user)
     end
   end
-    
+
 end
