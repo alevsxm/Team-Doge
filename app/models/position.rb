@@ -11,7 +11,7 @@ class Position < ActiveRecord::Base
                        start_year: position["startDate"]["year"],
                        start_month: position["startDate"]["month"],
                        end_year: position["endDate"].nil? ? "Is current position" : position["endDate"]["year"],
-                       end_month: position["endMonth"].nil? ? "Is current position" : position["endMonth"]["year"],
+                       end_month: position["endDate"].nil? ? "Is current position" : position["endDate"]["month"],
                        is_current: position["isCurrent"],
                        company_name: position["company"]["name"]
                        ))
