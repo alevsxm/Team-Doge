@@ -4,17 +4,16 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function () {
-    $('.show-ziglet').on('click', function(){
-    
+   // Ziggeo Player:  
+  $('.show-ziglet').on('click', function(){
     var zigletDiv = $(this).parent();
     var buttonID = (this.id);
     var videoKey = buttonID.replace(/ /g,'');
-    var showVideoButton = $(this)
+    var showVideoButton = $(this);
     $('div.player').remove();
     $('button.show-ziglet').show();
     showVideoButton.hide();
     var showPlayer= '<div class="player"><ziggeo ziggeo-video=\'_' + videoKey + '\' ziggeo-width=550 ziggeo-height=450></ziggeo><button id="close-player">Close Player</button></div>';
-    console.log(couldNotLoadError); 
     $(showPlayer).appendTo(zigletDiv);
     $('#close-player').on('click', function() {
       var playerDiv = $(this).parent();
@@ -24,29 +23,32 @@ $(document).ready(function () {
     });
   });
 
+  // Ziggeo Recorder:
   $('.record-ziglet').on('click', function(){
-    
     var zigletDiv = $(this).parent();
     var buttonID = (this.id);
-    var videoKey = buttonID.replace(/ /g,''); 
-    var oldVideoKey = '_' + videoKey
-    var pressedRecordVideoButton = $(this); 
+    var videoKey = buttonID.replace(/ /g,'');
+    var oldVideokey = '_' + videoKey; 
+    var recordVideoButton = $(this);
+     $('div.recorder').remove();
+     $('button.record-ziglet').show();
+    recordVideoButton.hide();
+    ZiggeoApi.Videos.destroy(oldVideokey, {
+      success: function(args, results){
+        // if video deleted this code runs
+      },
+      failure: function(args, error){
+        // if error on video deletion this code runs
+      }
+    });
 
-    $('div.recorder').remove();
-    $('button.record-ziglet').show();
-
-    pressedRecordVideoButton.hide(); 
-   
-      
-      var newRecorder = '<div class="recorder"><ziggeo id="ziglet-recorder" ziggeo-width=420 ziggeo-height=340 ziggeo-key=\'' + videoKey + '\' ziggeo-limit=120></ziggeo><button id="close-recorder">Close Recorder</button></div>';
-      
-      $(newRecorder).appendTo(zigletDiv);
-
-      $('#close-recorder').on('click', function() {
-        var recorderDiv = $(this).parent();
-        recorderDiv.remove();
-        pressedRecordVideoButton.show();
-   
+    var newRecorder = '<div class="recorder"><ziggeo id="ziglet-recorder" ziggeo-width=420 ziggeo-height=340 ziggeo-key=\'' + videoKey + '\' ziggeo-limit=120></ziggeo><button id="close-recorder">Close Recorder</button></div>';
+    $(newRecorder).appendTo(zigletDiv);
+    $('#close-recorder').on('click', function() {
+      var recorderDiv = $(this).parent();
+      console.log(recorderDiv);
+      recorderDiv.remove();
+      recordVideoButton.show();
     });
   });
 
