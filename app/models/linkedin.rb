@@ -24,9 +24,9 @@ class Linkedin
   def self.create_all(response_hash)
     user = User.create_user(response_hash)
     resovision = Resovision.create_resovision(response_hash)
-    positions = Position.create_positions(response_hash)
+    position_array = Position.create_positions(response_hash)
     educations = Education.create_educations(response_hash)
-    resovision.positions.push(positions)
+    resovision.positions.push(position_array)
     resovision.educations.push(educations)
     user.resovision = resovision
     user
