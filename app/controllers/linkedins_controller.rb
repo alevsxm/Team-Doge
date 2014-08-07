@@ -44,7 +44,6 @@ class LinkedinsController < ApplicationController
               session[:current_user] = User.find_by(linkedin_member_id: response_hash["id"]).id
             end
 
-
             # Handle HTTP responses
             case response
               when Net::HTTPUnauthorized
