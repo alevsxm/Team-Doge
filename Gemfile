@@ -38,6 +38,9 @@ group :development do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers', require: false
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
 
 # Use unicorn as the app server

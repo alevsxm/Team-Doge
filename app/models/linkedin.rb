@@ -16,6 +16,7 @@ class Linkedin
     )
   end
 
+
   # def self.authorize
   #  #Redirect your user in order to authenticate
   # end

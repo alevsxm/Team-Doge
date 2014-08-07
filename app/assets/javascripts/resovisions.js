@@ -38,13 +38,15 @@ $(document).ready(function() {
     var buttonID = (this.id);
     var videoKey = buttonID.replace(/ /g,'');
     var showVideoButton = $(this)
+    $('div.player').remove();
+    $('button.show-ziglet').show();
     showVideoButton.hide();
-    var showPlayer= '<button id="close-player">Close Player<ziggeo ziggeo-video=\'_' + videoKey + '\' ziggeo-width=550 ziggeo-height=450></ziggeo></button>';
+    var showPlayer= '<div class="player"><ziggeo ziggeo-video=\'_' + videoKey + '\' ziggeo-width=550 ziggeo-height=450></ziggeo><button id="close-player">Close Player</button></div>';
     $(showPlayer).appendTo(zigletDiv);
     $('#close-player').on('click', function() {
-      var closeButton = $(this);
-      console.log(closeButton);
-      $(this).remove();
+      var playerDiv = $(this).parent();
+      console.log(playerDiv);
+      playerDiv.remove();
       showVideoButton.show();
     });
   });
@@ -54,13 +56,15 @@ $(document).ready(function() {
     var buttonID = (this.id);
     var videoKey = buttonID.replace(/ /g,'');
     var recordVideoButton = $(this)
+     $('div.recorder').remove();
+     $('button.record-ziglet').show();
     recordVideoButton.hide();
-    var newRecorder = '<button id="close-recorder">Close Recorder<ziggeo id="ziglet-recorder" ziggeo-width=420 ziggeo-height=340 ziggeo-key=\'' + videoKey + '\' ziggeo-limit=120></ziggeo></button>';
+    var newRecorder = '<div class="recorder"><ziggeo id="ziglet-recorder" ziggeo-width=420 ziggeo-height=340 ziggeo-key=\'' + videoKey + '\' ziggeo-limit=120></ziggeo><button id="close-recorder">Close Recorder</button></div>';
     $(newRecorder).appendTo(zigletDiv);
     $('#close-recorder').on('click', function() {
-      var closeButton = $(this);
-      console.log(closeButton);
-      $(this).remove();
+      var recorderDiv = $(this).parent();
+      console.log(recorderDiv);
+      recorderDiv.remove();
       recordVideoButton.show();
     });
   });
