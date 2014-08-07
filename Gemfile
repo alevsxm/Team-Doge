@@ -54,3 +54,5 @@ end
 
 gem 'oauth'
 gem 'oauth2'
+
+gem 'cancancan'

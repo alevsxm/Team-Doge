@@ -1,7 +1,6 @@
-
 class ResovisionsController < ApplicationController
 
-	before_action :authenticate, only: [:new, :create]
+	before_action :authenticate
 
 	def index
 		@resovisions = Resovision.all
@@ -24,20 +23,18 @@ class ResovisionsController < ApplicationController
 		@resovision = Resovision.find(params[:id])
 		@positions =  Position.where(resovision_id: params[:id])
 		@educations = Education.where(resovision_id: params[:id])
-		# @videos= Videos.where(resovision_id: params[:id])
 	end
 
 	def edit
 		@resovision = Resovision.find(params[:id])
 		@positions =  Position.where(resovision_id: params[:id])
 		@educations = Education.where(resovision_id: params[:id])
-		# @videos= Videos.where(resovision_id: params[:id])
+		authorize! :update, @resovision
 	end
 
 	def update
 		@resovision = Resovision.find(params[:id])
-		# @videos= Videos.where(resovision_id: params[:id])
-
+		authorize! :update, @resovision
 		if @resovision.update(resovision_params)
 			render json: @resovision
     else
