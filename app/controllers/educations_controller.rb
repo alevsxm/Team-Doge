@@ -2,7 +2,6 @@ class EducationsController < ApplicationController
 
   def update
     @education = Education.find(params[:id])
-    authorize! :update, @position
     if @education.update(education_params)
       render json: @education
     else

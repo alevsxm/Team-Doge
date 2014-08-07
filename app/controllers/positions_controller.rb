@@ -2,7 +2,6 @@ class PositionsController < ApplicationController
 
   def update
     @position = Position.find(params[:id])
-    authorize! :update, @position
     if @position.update(position_params)
       render json: @position
     else
