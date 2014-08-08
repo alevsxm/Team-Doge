@@ -99,6 +99,21 @@ div#resovision-div {
   margin-left: 0px;
 }
 
+#res-div {
+  font-family: "Pacifico", 'Raleway';
+  width: 900px;
+  height: 85px;
+  margin: 0 auto;
+  padding-top: 400px;
+  font-size: 75px;
+  line-height: 0.8;
+  font-weight: light;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
 #resovision-edit-div {}
 
 

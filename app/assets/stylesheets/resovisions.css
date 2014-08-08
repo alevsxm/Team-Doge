@@ -31,14 +31,15 @@ li {
 
 div .name {
 	width: 900px;
-	height: 200px;
+	height: 125px;
 	margin: 0 auto;
-	font-size: 75px;
+	padding-top: 10px;
+	font-size: 70px;
+	line-height: 0.8;
 	font-weight: light;
 	letter-spacing: -1px;
 	text-align: center;
 	margin-bottom: 10px;
-	line-height: 1.5;
 }
 .res-basic-info {
 
@@ -62,7 +63,7 @@ button {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0px;
-  font-family: 'Raleway', sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Pacifico";
   color: #ffffff;
   font-size: 15px;
   padding: 10px 20px 10px 20px;
@@ -79,30 +80,37 @@ button:hover {
   text-decoration: none;
 }
 
-button {
-  background: #cfcfcf;
-  background-image: -webkit-linear-gradient(top, #cfcfcf, #b85858);
-  background-image: -moz-linear-gradient(top, #cfcfcf, #b85858);
-  background-image: -ms-linear-gradient(top, #cfcfcf, #b85858);
-  background-image: -o-linear-gradient(top, #cfcfcf, #b85858);
-  background-image: linear-gradient(to bottom, #cfcfcf, #b85858);
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0px;
-  font-family: 'Raleway', sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #ffffff;
-  font-size: 30px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+h3 {
+	font-size: 18px;
 }
 
-button:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
+#experience {
+	width: 900px;
+	height: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#education {
+	width: 900px;
+	height: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#edit-body {
+	line-height: 1.5;
+	font-family: 'Raleway', sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #262B30;
+	padding-top: 25px;
+	color: #262B30;
+	background-size: cover;
+}
+
+#edit-div {
+	background: #C0C0C0;
+	padding: 20px;
+	margin: 50px auto;
+	min-height: 600px;
 }
 
