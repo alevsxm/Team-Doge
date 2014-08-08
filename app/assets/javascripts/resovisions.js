@@ -1,14 +1,10 @@
 // # Place all the behaviors and hooks related to the matching controller here.
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
-<<<<<<< HEAD
-$(document).on('page:load', function() {
-  console.log("Oh, Hai.");
-=======
 
 $(document).ready(function() {
   console.log("Oh, Hai.");
->>>>>>> c571b7e2e6a5ec5b6d728c44e5ea67d12854289b
+
 
   // Resovision:
   $('body').on('click', '.resovision-info', editInfo );
