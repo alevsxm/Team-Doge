@@ -1,11 +1,15 @@
-<h2 id="profile">Profile page</h1>
+<body id="user-body">
 
-<div class="profile-div">
-  <img class="pic-url" <%= image_tag(@user.resovision.pic_url) %><br>
-  <div class="profile-info"
-    <p class="first-name"><%= @user.resovision.first_name %></p>
-    <p class="last-name"><%= @user.resovision.last_name %></p>
-    <p class="location">Location: <%= @user.resovision.location %></p>
-    <p class="edit-resovision"><%= link_to "Edit Your Resovision", edit_resovision_path(@user.resovision) %></p>
+  <h2 id="profile">Profile page</h1>
+
+  <div class="profile-div">
+    <img class="pic-url" <%= image_tag(@user.resovision.pic_url) %><br>
+    <div class="profile-info"
+      <p class="first-name"><%= @user.resovision.first_name %></p>
+      <p class="last-name"><%= @user.resovision.last_name %></p>
+      <p class="location">Location: <%= @user.resovision.location %></p>
+      <p class="edit-resovision"><%= link_to "Edit Your Resovision", edit_resovision_path(@user.resovision) %></p>
+    </div>
   </div>
-</div>
+
+</body>

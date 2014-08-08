@@ -1,0 +1,17 @@
+
+
+#user-body {
+  line-height: 1.5;
+  font-family: 'Raleway', sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #262B30;
+  padding-top: 25px;
+  color: #262B30;
+  background-size: cover;
+}
+
+.profile-div {
+  background: #C0C0C0;
+  padding: 20px;
+  margin: 50px auto;
+  min-height: 600px;
+}
