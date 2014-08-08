@@ -41,6 +41,7 @@ group :development do
   gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'selenium-webdriver', '~> 2.42.0'
 end
 
 # Use unicorn as the app server
@@ -56,3 +57,5 @@ gem 'oauth'
 gem 'oauth2'
 
 gem 'cancancan'
+
+gem 'simplecov', :require => false, :group => :test
