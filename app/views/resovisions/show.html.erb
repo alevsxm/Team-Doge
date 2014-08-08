@@ -1,17 +1,25 @@
-<div class="resovision-div">
+<body id="show-body">
+
+<div class="container" id="show-div">
 
   <div class="resovision-info-ro" data-id="<%= @resovision.id %>" >
-    <img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
-    <li class="resovision-element" id="first_name"><%= @resovision.first_name %></li>
-    <li class="resovision-element" id="last_name"><%= @resovision.last_name %></li>
-    <p>Location:</p>
-    <li class="resovision-element" id="location"><%= @resovision.location %></li>
-    <p>Industry:</p>
-    <li class="resovision-element" id="industry"><%= @resovision.industry %></li>
-    <p>Headline:</p>
-    <li class="resovision-element" id="headline"><%= @resovision.headline %></li>
-    <p>Summary:</p>
-    <li class="resovision-element" id="summary"><%= @resovision.summary %></li>
+    <div class="img-div">
+      <img class="pic-url" <%= image_tag(@resovision.pic_url) %>
+    </div>
+    <div class="name">
+      <li class="resovision-element" id="first_name"><%= @resovision.first_name %></li>
+      <li class="resovision-element" id="last_name"><%= @resovision.last_name %></li><br>
+    </div>
+    <div class="res-basic-info"
+      <li class="resovision-element" id="location"><%= @resovision.location %></li>
+      <li class="resovision-element" id="industry"><%= @resovision.industry %></li>
+      <li class="resovision-element" id="headline"><%= @resovision.headline %></li>
+    </div><hr>
+
+    <div class="res-summary"
+        <p>Summary:</p>
+      <li class="resovision-element" id="summary"><%= @resovision.summary %></li>
+    </div>
   </div><br><hr>
 
   <% if @resovision.num_positions > 0 %>
@@ -58,3 +66,4 @@
     </div>
   <% end %>
 </div>
+</body>
