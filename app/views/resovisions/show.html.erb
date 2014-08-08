@@ -15,32 +15,32 @@
       <li class="resovision-element" id="industry"><%= @resovision.industry %></li>
       <li class="resovision-element" id="headline"><%= @resovision.headline %></li>
     </div><hr>
-
-    <div class="res-summary"
-        <p>Summary:</p>
+    <div class="res-summary">
+      <h3 id="summary">Summary:</h3>
       <li class="resovision-element" id="summary"><%= @resovision.summary %></li>
     </div>
   </div><br><hr>
 
   <% if @resovision.num_positions > 0 %>
-    <div class="all-positions"> Positions:
+    <div class="all-positions">
+      <div id="experience"> Experience </div>
       <% @resovision.positions.sort.each do |position| %>
         <div class="position-ro" data-id="<%= position.id %>">
-          <p>Company:</p>
+          <h3>Company:</h3>
           <li class="position-element" id="company_name"><%= position.company_name %></li>
-          <p>Title:</p>
+          <h3>Title:</h3>
           <li class="position-element" id="title"><%= position.title %></li>
-          <p>Summary:</p>
+          <h3>Summary:</h3>
           <li class="position-element" id="summary"><%= position.summary %></li>
-          <p>Currently working here?</p>
+          <h3>Currently working here?</h3>
           <li class="position-element" id="is_current"><%= position.is_current %></li>
-          <p>Start month:</p>
+          <h3>Start month:</h3>
           <li class="position-element" id="start_month"><%= position.start_month %></li>
-          <p>Start year:</p>
+          <h3>Start year:</h3>
           <li class="position-element" id="start_year"><%= position.start_year %></li>
-          <p>End month:</p>
+          <h3>End month:</h3>
           <li class="position-element" id="end_month"><%= position.end_month %></li>
-          <p>End year:</p>
+          <h3>End year:</h3>
           <li class="position-element" id="end_year"><%= position.end_year %></li>
         </div><hr>
       <% end %>
@@ -48,7 +48,8 @@
   <% end %>
 
   <% if @resovision.num_educations > 0 %>
-    <div class="all-educations"> Education:
+    <div class="all-educations">
+      <div id="education"> Education </div>
       <% @resovision.educations.sort.each do |education| %>
           <div class="education-ro" data-id="<%= education.id %>">
             <p>School name:</p>

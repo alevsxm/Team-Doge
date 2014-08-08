@@ -32,14 +32,15 @@ li {
 
 div .name {
 	width: 900px;
-	height: 200px;
+	height: 125px;
 	margin: 0 auto;
-	font-size: 75px;
+	padding-top: 10px;
+	font-size: 70px;
+	line-height: 0.8;
 	font-weight: light;
 	letter-spacing: -1px;
 	text-align: center;
 	margin-bottom: 10px;
-	line-height: 1.5;
 }
 .res-basic-info {
 
@@ -51,4 +52,38 @@ div .res-basic-info {
 
 div .res-summary {
 	text-align: center;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+#experience {
+	width: 900px;
+	height: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#education {
+	width: 900px;
+	height: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#edit-body {
+	line-height: 1.5;
+	font-family: 'Raleway', sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #262B30;
+	padding-top: 25px;
+	color: #262B30;
+	background-size: cover;
+}
+
+#edit-div {
+	background: #C0C0C0;
+	padding: 20px;
+	margin: 50px auto;
+	min-height: 600px;
 }
