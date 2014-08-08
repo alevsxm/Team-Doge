@@ -22,13 +22,22 @@
 <div class="container">
   <% if current_user %>
   <header>
-    <nav>
-      <ul>
-        <li>Welcome, <%= current_user.resovision.first_name %></li>
-        <li><%= link_to 'Log Out', logout_path %></li>
-        <li><%= link_to 'Home', user_path(current_user) %></li>
-      </ul>
-    </nav>
+    <% if current_user %>
+      <div id=left-nav>
+        <nav>
+          <span> Welcome, <%= current_user.resovision.first_name %></span>
+          <a><%= link_to 'Log Out', logout_path %></a>
+        </nav>
+      </div>
+    <div id="right-nav">
+      <nav>
+        <a><%= link_to 'Home', root_path %> | </a>
+        <a><%= link_to 'Public Resovision', resovision_path(current_user.resovision) %> | </a>
+        <a><%= link_to 'Edit Your Resovision', edit_resovision_path(current_user.resovision) %> |</a>
+        <a><%= link_to 'Account Settings', user_path(current_user) %> </a>
+      </nav>
+    </div>
+    <% end %>
   </header>
   <% end %>
 

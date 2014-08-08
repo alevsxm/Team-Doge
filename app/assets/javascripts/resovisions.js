@@ -3,7 +3,11 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready(function() {
+
+$(document).ready(readyFunc);
+$(document).on('page:load', readyFunc);
+
+function readyFunc(){
   console.log("Oh, Hai.");
 
   // Resovision:
@@ -68,7 +72,7 @@ $(document).ready(function() {
       recordVideoButton.show();
     });
   });
-});
+}
 
 function editInfo() {
   var resovisionInfoDiv = $(this);
