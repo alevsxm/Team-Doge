@@ -1,0 +1,28 @@
+
+#home-body {
+  line-height: 1.5;
+  font-family: 'Raleway', sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: url("http://wp.metrothemes.me/me-wp/wp-content/uploads/sites/8/2014/07/bg3.jpg");
+  padding-top: 25px;
+  color: #ffffff;
+  background-size: cover;
+}
+
+h1#resovisions {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 75px;
+  font-weight: light;
+  letter-spacing: 1px;
+  padding-top: 0px;
+  padding: 5px;
+  margin-top: 50px;
+  margin-left: 400px;
+  position: center;
+}
+
+#generate a {
+  text-decoration: none;
+  color: #ffffff;
+  margin-top: 55px;
+  margin-left: 207px;
+}

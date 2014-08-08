@@ -1,5 +1,6 @@
+<body id="edit-body">
 
-<div class="resovision-div">
+<div class="container" id="edit-div">
   <div class="resovision-info" data-id="<%= @resovision.id %>" >
     <img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
     <li class="resovision-element" id="first_name"><%= @resovision.first_name %></li>
@@ -66,8 +67,10 @@
               <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video about your time at <%= education.school_name %>.</button>
             </div>
           </div>
+
       <% end %>
     </div>
   <% end %><hr>
 
 </div>
+</body>

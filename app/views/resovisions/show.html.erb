@@ -1,17 +1,29 @@
-<div class="resovision-div">
+<body id="show-body">
 
-<img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
-<div class="name">
-  <h4 class="name"><%= @resovision.first_name %> <%= @resovision.last_name %></h4>
-<div class="profile-heading"
-  <li class="location"><%= @resovision.location %></li>
-  <li class="industry"><%= @resovision.industry %></li>
-  <li class="headline"><%= @resovision.headline %></li>
-  <li class="summary"><%= @resovision.summary %></li>
-  <div class= 'ziglets'>
-    <button class='show-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Meet <%= @resovision.first_name %> </button>
-  </div>
-</div>
+<div class="container" id="show-div">
+
+  <div class="resovision-info-ro" data-id="<%= @resovision.id %>" >
+    <div class="img-div">
+      <img class="pic-url" <%= image_tag(@resovision.pic_url) %>
+    </div>
+    <div class="name">
+      <li class="resovision-element" id="first_name"><%= @resovision.first_name %></li>
+      <li class="resovision-element" id="last_name"><%= @resovision.last_name %></li><br>
+    </div>
+    <div class="res-basic-info"
+      <li class="resovision-element" id="location"><%= @resovision.location %></li>
+      <li class="resovision-element" id="industry"><%= @resovision.industry %></li>
+      <li class="resovision-element" id="headline"><%= @resovision.headline %></li>
+    </div><hr>
+
+    <div class="res-summary"
+        <p>Summary:</p>
+      <li class="resovision-element" id="summary"><%= @resovision.summary %></li>
+    </div>
+    <div class= 'ziglets'>
+      <button class='show-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Meet <%= @resovision.first_name %> </button>
+    </div>
+  </div><br><hr>
 
 <hr> 
 <% if @resovision.num_positions > 0 %>
@@ -49,4 +61,6 @@
     </div>
   <% end %>
 </div>
+
+</body>
 
