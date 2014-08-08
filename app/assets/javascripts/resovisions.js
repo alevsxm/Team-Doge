@@ -123,8 +123,6 @@ $(document).ready(function() {
       updateEducation.call(this);
     }
   });
-
-
 });
 
 function editInfo() {
