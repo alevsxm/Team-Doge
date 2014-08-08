@@ -1,5 +1,6 @@
+<body id="edit-body">
 
-<div class="resovision-div">
+<div class="container" id="edit-div">
   <div class="resovision-info" data-id="<%= @resovision.id %>" >
     <img class="pic-url" <%= image_tag(@resovision.pic_url) %><br>
     <li class="resovision-element" id="first_name"><%= @resovision.first_name %></li>
@@ -16,13 +17,6 @@
       <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video introducing yourself.</button>
     </div>
   </div><br>
-
-<<<<<<< HEAD
-=======
-  <div class= 'ziglets'>
-    <button class='record-ziglet' id='<%= @resovision.last_name%><%= @resovision.first_name %>'>Record a video.</button>
-  </div><br><hr>
->>>>>>> c571b7e2e6a5ec5b6d728c44e5ea67d12854289b
 
   <% if @resovision.num_positions > 0 %>
     <div class="all-positions"> Positions:
@@ -46,15 +40,9 @@
           <p>End year:</p>
           <li class="position-element" id="end_year"><%= position.end_year %></li>
           <div class= 'ziglets'>
-<<<<<<< HEAD
             <button class='record-ziglet' id='<%= position.company_name %><%= @resovision.last_name%>'>Record a video about your time at <%= position.company_name %> </button>
           </div>
         </div>
-=======
-            <button class='record-ziglet' id='<%= position.company_name %><%= @resovision.last_name%>'>Record a video</button>
-          </div>
-        </div><hr>
->>>>>>> c571b7e2e6a5ec5b6d728c44e5ea67d12854289b
       <% end %>
     </div>
   <% end %>
@@ -75,17 +63,13 @@
             <p>End year:</p>
             <li class="education-element" id="end_year"><%= education.end_year %></li>
             <div class= 'ziglets'>
-<<<<<<< HEAD
               <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video about your time at <%= education.school_name %>.</button>
             </div>
           </div>
-=======
-              <button class='record-ziglet' id='<%= education.school_name %><%= @resovision.last_name%>'>Record a video.</button>
-            </div><br>
-          </div><hr>
->>>>>>> c571b7e2e6a5ec5b6d728c44e5ea67d12854289b
+
       <% end %>
     </div>
   <% end %><hr>
 
 </div>
+</body>
