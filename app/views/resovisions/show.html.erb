@@ -29,22 +29,12 @@
       <div id="experience"> Experience </div>
       <% @resovision.positions.sort.each do |position| %>
         <div class="position-ro" data-id="<%= position.id %>">
-          <h3>Company:</h3>
           <li class="position-element" id="company_name"><%= position.company_name %></li>
-          <h3>Title:</h3>
           <li class="position-element" id="title"><%= position.title %></li>
-          <h3>Summary:</h3>
+          <li></li><br>
           <li class="position-element" id="summary"><%= position.summary %></li>
-          <h3>Currently working here?</h3>
-          <li class="position-element" id="is_current"><%= position.is_current %></li>
-          <h3>Start month:</h3>
-          <li class="position-element" id="start_month"><%= position.start_month %></li>
-          <h3>Start year:</h3>
-          <li class="position-element" id="start_year"><%= position.start_year %></li>
-          <h3>End month:</h3>
-          <li class="position-element" id="end_month"><%= position.end_month %></li>
-          <h3>End year:</h3>
-          <li class="position-element" id="end_year"><%= position.end_year %></li>
+          <li class="position-element" id="start_month"><%= position.start_month %>/<%= position.start_year %>-<%= position.end_month %>/<%= position.end_year %></li>
+          <li></li><br>
           <div class= 'ziglets'>
             <button class='show-ziglet'id='<%= position.company_name %><%= @resovision.last_name%>'>Tell me more about this position <%= @resovision.first_name %></button>
           </div>
@@ -58,16 +48,11 @@
       <div id="education"> Education </div>
       <% @resovision.educations.sort.each do |education| %>
           <div class="education-ro" data-id="<%= education.id %>">
-            <p>School name:</p>
             <li class="education-element" id="school_name"><%= education.school_name %></li>
-            <p>Degree:</p>
             <li class="education-element" id="degree"><%= education.degree %></li>
-            <p>Field of study: </p>
             <li class="education-element" id="field_of_study"><%= education.field_of_study %></li>
-            <p>Start year:</p>
-            <li class="education-element" id="start_year"><%= education.start_year %></li>
-            <p>End year:</p>
-            <li class="education-element" id="end_year"><%= education.end_year %></li>
+            <li class="education-element" id="start_year"><%= education.start_year %>-<%= education.end_year %></li>
+            <li></li><br>
             <div class= 'ziglets'>
               <button class='show-ziglet'id='<%= education.school_name %><%= @resovision.last_name%>'>Tell me more about this school <%= @resovision.first_name %></button>
           </div>
