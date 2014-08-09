@@ -1,5 +1,9 @@
 == README
 
+Resovision allows you to add videos which help complement and expand on your linkedin profile.  Simply sign
+in using your linkedin credentials and record a video for any part of your profile where you would like an
+additional, personal touch.  Simple and easy!
+
 Heroku URL: 
 http://http://resovisions.herokuapp.com/
 
