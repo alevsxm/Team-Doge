@@ -5,7 +5,7 @@ in using your linkedin credentials and record a video for any part of your profi
 additional, personal touch.  Simple and easy!
 
 Heroku URL: 
-http://http://resovisions.herokuapp.com/
+resovisions.herokuapp.com/
 
 Lucid Chart ERDs:
 https://www.lucidchart.com/documents/edit/df60208e-dcc9-4ed9-a79d-865a4f0d50e4/0
