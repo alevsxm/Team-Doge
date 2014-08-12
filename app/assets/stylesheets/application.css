@@ -37,7 +37,7 @@ button:hover {
 }
 
 h2 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Pacifico', 'Raleway', sans-serif;
   font-size: 15px;
   font-weight: light;
   letter-spacing: -1px;
@@ -101,7 +101,11 @@ div#resovision-div {
 
 #res-div {
   font-family: "Pacifico", 'Raleway';
-  font-size: 75px;
+  width: 900px;
+  height: 105px;
+  margin: 0 auto;
+  padding-top: 250px;
+  font-size: 120px;
   line-height: 0.8;
   letter-spacing: -1px;
   margin-bottom: 10px;
