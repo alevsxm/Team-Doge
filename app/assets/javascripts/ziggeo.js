@@ -1,7 +1,7 @@
-$(document).ready(readyFunc);
-$(document).on('page:load', readyFunc);
+$(document).ready(readyFuncZiggeo);
+$(document).on('page:load', readyFuncZiggeo);
 
-function readyFunc(){
+function readyFuncZiggeo(){
   console.log("Ziggeo loaded bro");
 
   // Ziggeo Player:
